@@ -1,9 +1,9 @@
 # Evaluation status
 
-A new browser-based, official-source comparison started on **29 September 2026** through Oracle's `oracle-task-orchestrator`. It uses GPT-5.6 Sol with verified High thinking and Web Search in the isolated ChatGPT project. The runner has **three concurrent conversations**. The frozen design contains **15 distinct research cases × 5 conditions × 3 independent repetitions = 225 conversations**.
+**All 225 browser dialogues completed on 30 September 2026.** The dataset contains 15 official-source research cases × 5 conditions × 3 independent repetitions, with 45 dialogues per condition and 90 two-turn dialogues. Runs used oracle-task-orchestrator, GPT-5.6 Sol, verified High and Web Search, with concurrency 3.
 
-A separate 15-conversation pilot completed successfully. All pilot runs saved responses with direct source URLs; the model and High setting were verified, including the six two-turn conversations. Pilot responses are excluded from the final analysis.
+The first pass completed 200 and failed 25. Recovery reran those 25 dialogues; three additional Search verification failures occurred during retries. All 28 invalid attempts are logged and excluded from the 225-answer dataset. The [execution audit](EXECUTION_AUDIT.md) reports the checks and seven citation-export warnings. No technically failed dialogue remains.
 
-The final batch is **in progress**. No comparison or winner is reported until all valid runs are complete and graded. See [the browser protocol](BROWSER_WEB_PROTOCOL.md), [15 cases and scoring anchors](browser-web-tasks.json), and [the browser batch builder](build_browser_batches.py). Raw run logs and answers are saved separately in the Oracle experiment directory while the study runs.
+**Grading is pending.** Completion is not evidence that a prompt is better. Factual grading, source verification, the manual audit, and comparative charts follow the [frozen browser protocol](BROWSER_WEB_PROTOCOL.md). The [case set](browser-web-tasks.json) and canonical prompt hashes remain unchanged.
 
-The earlier API experiment stopped after 107 of 225 conversations because of account credits. Those responses are **superseded** and will not be mixed with browser results. Its original [protocol](PROTOCOL.md) and [cases](tasks.json) remain for historical audit only.
+The separate 15-dialogue pilot and the superseded 107 API responses are excluded from final comparisons.
