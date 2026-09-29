@@ -1,0 +1,122 @@
+[
+  {
+    "id": "F01",
+    "category": "factual",
+    "prompt": "A service policy says: standard refunds are available within 14 calendar days of purchase; accessed digital items are normally excluded; an accessibility failure is an exception if reported within 30 days and a replacement attempt has failed. The exception overrides the standard window. Mira bought a digital course on September 1, accessed it on September 3, reported that its captions were unusable on September 10, tried the replacement on September 11, and requested a refund on September 16. Is she eligible under this policy? Explain the controlling rule.",
+    "required": ["Yes, the accessibility exception applies", "The ordinary 14-day window has passed or is not the controlling rule", "Accessing the digital item does not defeat the exception", "The report was within 30 days and the replacement failed"],
+    "latent": ["Clarify what evidence shows the replacement failed", "Distinguish policy eligibility from legal rights", "Identify the date from which each window runs"],
+    "clarify": ["Whether the caption failure persisted after replacement", "Whether the policy is the only authority being assessed", "The exact request and report dates"]
+  },
+  {
+    "id": "F02",
+    "category": "factual",
+    "prompt": "Two clinics report treatment success. Clinic A: 90 successes among 100 low-risk patients and 10 among 20 high-risk patients. Clinic B: 19 among 20 low-risk and 72 among 100 high-risk. Which clinic has the higher overall success rate, which is better within each risk group, and what conclusion can a patient draw from the table?",
+    "required": ["Overall A is 100/120 or about 83.3%", "Overall B is 91/120 or about 75.8%", "B is higher in both low-risk and high-risk groups", "The reversal is due to different risk-group composition", "An individual should compare within their risk group rather than rely on the aggregate"],
+    "latent": ["Treatment selection or case-mix confounding", "Sample size and uncertainty", "Outcome definitions and follow-up periods"],
+    "clarify": ["Patient risk group", "Whether the treatments and success definitions are comparable", "Whether this table is the full evidence base"]
+  },
+  {
+    "id": "F03",
+    "category": "factual",
+    "prompt": "A grant deadline is September 29, 2026 at 18:00 UTC. A portal shows 'submitted 19:42 Berlin time' on that date; Berlin is UTC+2 on that date. A confirmation email arrived at 20:10 Berlin time. Was the application submitted before the deadline, and by how much? Which timestamp controls?",
+    "required": ["19:42 Berlin equals 17:42 UTC", "Submission was 18 minutes early", "The portal submission timestamp controls, not email arrival", "Email arrived at 18:10 UTC and does not itself prove lateness"],
+    "latent": ["Time-zone conversion and daylight-saving date", "Server timestamp versus email delivery lag", "Whether the portal uses the user's or server's time zone"],
+    "clarify": ["Which timestamp the grant rules define as submission", "Whether the portal time zone label is trustworthy", "Whether any later edit changed final submission"]
+  },
+  {
+    "id": "F04",
+    "category": "factual",
+    "prompt": "A data dictionary says status='active' qualifies for the report, status='paused' does not; a NULL amount means unknown and must be excluded; amount=0 is a known value and must be included. Four rows are (active, 0), (active, NULL), (paused, 10), and (active, 7). How many rows qualify and what is their amount sum? Give the exact filter logic.",
+    "required": ["Two rows qualify", "The sum is 7", "Filter status active and amount IS NOT NULL", "Zero must be retained"],
+    "latent": ["SQL NULL semantics", "Difference between count of rows and sum", "Whether duplicate rows are possible"],
+    "clarify": ["SQL dialect if code is requested", "Whether the four rows are exhaustive", "Whether additional report filters exist"]
+  },
+  {
+    "id": "A01",
+    "category": "analytical",
+    "prompt": "A screening test is used in a population where 1% have a condition. Sensitivity is 90% and specificity is 95%. A person tests positive once. What is the probability they have the condition under these assumptions? Show a check using a cohort of 10,000 and explain the main caveat.",
+    "required": ["About 15.38% posterior probability", "In 10,000 people there are about 90 true positives", "In 10,000 people there are about 495 false positives", "Positive predictive value is 90/(90+495)", "The estimate depends on prevalence and test performance in the relevant population"],
+    "latent": ["Confirmatory testing", "Population-specific prevalence", "Dependence if tests are repeated"],
+    "clarify": ["Population risk relative to the stated 1%", "Whether this is a single independent test", "Whether the decision is diagnosis or next testing step"]
+  },
+  {
+    "id": "A02",
+    "category": "analytical",
+    "prompt": "A team has two machines and four jobs. Jobs A and B each take 3 hours, C takes 2 hours, and D takes 1 hour. A and B cannot run on the same machine. C may start only after A finishes; D may start only after B finishes. Jobs cannot be interrupted. Find the shortest completion time and a valid schedule, explaining why a shorter schedule is impossible.",
+    "required": ["Optimal makespan is 5 hours", "Run A and B in parallel for hours 0 to 3", "Run C after A for hours 3 to 5", "Run D after B for hours 3 to 4", "A followed by C gives a five-hour lower bound"],
+    "latent": ["The precedence constraints", "Machine capacity", "The lower-bound proof"],
+    "clarify": ["Whether jobs can be interrupted", "Whether machines are identical", "Whether setup time exists"]
+  },
+  {
+    "id": "A03",
+    "category": "analytical",
+    "prompt": "A deployment started at 10:00. At 10:05, latency rose. At 10:07, a new dashboard was enabled. The dashboard then showed a sharp increase in 5xx errors, but raw server logs show the 5xx increase began at 10:03. Someone argues the dashboard caused the errors. Evaluate that claim and give a prioritized diagnostic plan.",
+    "required": ["The dashboard cannot have caused errors that began at 10:03 if it was enabled at 10:07", "The deployment is a plausible cause but temporal order alone is not proof", "Separate actual error onset from dashboard visibility", "Check deployment diff, metrics, logs, and rollback or canary evidence"],
+    "latent": ["Clock synchronization", "Observability artifact versus real incident", "Other concurrent changes"],
+    "clarify": ["Clock synchronization across systems", "Whether errors affected users before the dashboard", "What changed in the deployment"]
+  },
+  {
+    "id": "A04",
+    "category": "analytical",
+    "prompt": "A product team estimates that a feature will add $40,000 if it succeeds and lose $10,000 if it fails. The probability of success is 25%. A $2,000 experiment would change that estimate but no accuracy information for the experiment is available. Is building now positive expected value? Can you decide whether to run the experiment from the supplied data?",
+    "required": ["Build-now expected value is $2,500", "The calculation is 0.25*40000 + 0.75*(-10000)", "The experiment decision cannot be determined without information about signal accuracy or decision impact", "The experiment's $2,000 cost alone is insufficient to calculate its value of information"],
+    "latent": ["Value of information", "Risk tolerance versus expected value", "Whether payoff estimates include opportunity costs"],
+    "clarify": ["Experiment accuracy or possible outcomes", "Decision maker's risk tolerance", "Whether payoffs are net and mutually exclusive"]
+  },
+  {
+    "id": "P01",
+    "category": "practical",
+    "prompt": "A small firm needs to recover a critical database after a failure. It can tolerate at most 15 minutes of lost data (RPO) and 2 hours of downtime (RTO). Option A makes a nightly backup, restores in 30 minutes, and costs $100/month. Option B streams changes every 5 minutes, restores in 90 minutes, and costs $350/month. Option C streams changes every minute, restores in 4 hours, and costs $500/month. Which option meets the stated requirements at the lowest listed price, and what should be verified before purchase?",
+    "required": ["Option B is the cheapest qualifying choice", "A fails the 15-minute RPO", "C fails the 2-hour RTO", "B has 5-minute RPO and 90-minute RTO", "Verify restore tests and whether the stated guarantees include detection and failover"],
+    "latent": ["Backup integrity and restore testing", "RPO/RTO definitions under real incidents", "Single-region correlated failure"],
+    "clarify": ["Whether stated restore times include detection and failover", "Whether prices include storage and egress", "Whether offsite or immutable copies are required"]
+  },
+  {
+    "id": "P02",
+    "category": "practical",
+    "prompt": "A support team has one engineer for the next 4 hours. At 09:00 there is an active payment outage affecting 40% of customers; a cosmetic homepage bug affects everyone but does not block use; a security advisory for a dependency has no confirmed exploit or reachable path. Propose the first four hours of work, including communication and a trigger to change priorities.",
+    "required": ["Prioritize containment and recovery of the payment outage", "Communicate incident status and owner or update cadence", "Defer the cosmetic issue", "Triage the security advisory for reachability and severity without assuming no risk", "Specify a trigger that would elevate security response or change outage priority"],
+    "latent": ["Customer impact and rollback safety", "Security exploitability and exposure", "Escalation or additional staffing"],
+    "clarify": ["Whether payments can be safely rolled back", "Advisory severity and exposure", "Availability of on-call help"]
+  },
+  {
+    "id": "P03",
+    "category": "practical",
+    "prompt": "A team must migrate 2 TB of records to a new database. The old service allows only 10 minutes of read-only time, record IDs must remain stable, and a rollback must be possible for 24 hours. Propose a migration sequence and name the most important validation and rollback conditions. Assume no direct replication feature is available.",
+    "required": ["Backfill historical data before cutover", "Capture or replay changes during backfill by an alternative to direct replication", "Validate IDs and counts or checksums", "Keep a short read-only cutover window within 10 minutes", "Plan a reversible write-routing or dual-write strategy for 24-hour rollback"],
+    "latent": ["Change capture without native replication", "Rollback after divergent writes", "Performance and consistency checks"],
+    "clarify": ["Available application-level change log or dual-write option", "Acceptable lag and throughput", "Schema compatibility and rollback point"]
+  },
+  {
+    "id": "P04",
+    "category": "practical",
+    "prompt": "An online shop's checkout conversion fell from 4.0% to 3.2% after a redesign. Traffic also shifted toward mobile. The team has event logs by device and version, but no randomized rollout. Design a one-week investigation that can separate likely redesign effects from traffic-mix effects. State what the data can and cannot establish.",
+    "required": ["Compute device-stratified conversion before and after", "Decompose aggregate change into mix versus within-device effects", "Inspect instrumentation and funnel-step changes", "Account for nonrandomized confounding and avoid a causal certainty claim", "Propose a follow-up randomized or staged test if feasible"],
+    "latent": ["Instrumentation change", "Device mix shift", "Seasonality or campaign confounding"],
+    "clarify": ["Exact launch date and concurrent campaigns", "Availability of stable user cohorts", "Whether event definitions changed"]
+  },
+  {
+    "id": "U01",
+    "category": "ambiguous",
+    "prompt": "Should our five-person team buy an analytics platform or build our own? We need an answer for next week's planning meeting.",
+    "required": ["Give a conditional recommendation rather than a categorical buy/build answer", "Identify data volume, use cases, compliance, budget, engineering capacity, and time horizon as decision inputs", "Propose a lightweight comparison or proof of concept", "Distinguish maintenance and integration cost from purchase price"],
+    "latent": ["Vendor lock-in and data portability", "Privacy or regulatory constraints", "Total cost of ownership"],
+    "clarify": ["Primary use cases and users", "Budget and engineering capacity", "Data volume and compliance constraints", "Decision horizon"]
+  },
+  {
+    "id": "U02",
+    "category": "ambiguous",
+    "prompt": "Why did sign-ups fall this month? Tell me what to do next.",
+    "required": ["Do not assert one cause from no evidence", "Ask for or specify baseline, timing, segment, funnel, and instrumentation checks", "Separate traffic-volume decline from conversion-rate decline", "Offer a prioritized diagnostic sequence and conditional actions"],
+    "latent": ["Tracking change", "Channel mix or campaign changes", "Product outage or form friction"],
+    "clarify": ["Definition of sign-up and event integrity", "Segment and channel breakdown", "Date of the drop and concurrent changes", "Business decision at stake"]
+  },
+  {
+    "id": "U03",
+    "category": "ambiguous",
+    "prompt": "I know some Python. What should I learn next to become useful on a data team in six months?",
+    "required": ["Tailor or condition the plan on current Python and data skills", "Include SQL and data cleaning or analysis fundamentals", "Include a realistic portfolio or project and feedback loop", "Ask about target role, weekly time, domain, and existing knowledge", "Avoid a one-size-fits-all curriculum"],
+    "latent": ["Difference between analyst, engineer, and scientist roles", "Time budget and existing knowledge", "Evidence of skill through projects"],
+    "clarify": ["Target role", "Weekly time available", "SQL and statistics baseline", "Preferred domain or job market"]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PILOT01",
+    "category": "analytical",
+    "prompt": "A shop offers 20% off a $100 item, then charges 10% tax on the discounted price, then applies a $5 shipping fee. What is the final price? A colleague says the discount and tax cancel each other. Check that claim.",
+    "required": ["Final price is $93", "Discounted item price is $80", "Tax is $8", "A 20% discount and 10% tax do not cancel because they use different bases"],
+    "latent": ["Order of operations", "Whether shipping is taxable", "Whether coupons apply before tax"],
+    "clarify": ["Whether shipping is taxable", "Whether any other fee applies", "Whether the price is before tax"]
+  },
+  {
+    "id": "PILOT02",
+    "category": "ambiguous",
+    "prompt": "Should we move our team's internal notes to a new tool? We need to decide this quarter.",
+    "required": ["Avoid an unconditional move recommendation", "Ask about current pain points, migration cost, security, and collaboration needs", "Propose a small trial and decision criteria"],
+    "latent": ["Data export and lock-in", "Permission and privacy needs", "Adoption cost"],
+    "clarify": ["Current pain points", "Users and workflows", "Security needs", "Migration budget"]
+  },
+  {
+    "id": "PILOT03",
+    "category": "factual",
+    "prompt": "A warranty says defects are covered for 12 months from delivery. It excludes accidental damage, but a documented manufacturing defect found after accidental damage remains covered if the defect is independent. A device was delivered January 2, 2026; it was scratched in March; an independent battery defect was documented in August; the claim was filed September 1. Is the battery defect covered under this policy?",
+    "required": ["The battery defect is covered", "The claim is within 12 months from delivery", "The scratch exclusion does not remove coverage for an independent manufacturing defect"],
+    "latent": ["Evidence of independence", "Delivery rather than purchase date", "Scope of the exclusion"],
+    "clarify": ["How independence was documented", "Whether the policy is the only authority", "Whether repair history affects coverage"]
+  }
+]
