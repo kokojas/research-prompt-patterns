@@ -148,7 +148,7 @@ def main() -> None:
             for arm in by_arm
         }
     summary = {
-        "source_batch": str(source_path), "judge_batch": str(judge_path),
+        "source_run": source_path.parent.name, "judge_run": judge_path.parent.name,
         "model": "gpt-5.6-sol", "judge_model": "gpt-6-astra", "task_count": len(tasks),
         "repeats": len({row["repeat"] for row in records}), "response_count": len(records),
         "arms": arms, "comparisons": comparisons, "category_required": category,

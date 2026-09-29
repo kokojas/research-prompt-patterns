@@ -5,13 +5,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ORACLE_ROOT = Path("/Users/maksym/Downloads/Codex (1)/oracle-runs")
-CREATE_BATCH = Path("/Users/maksym/.codex/skills/oracle-task-orchestrator/scripts/create_batch.py")
+ORACLE_ROOT = Path(os.environ.get("ORACLE_RUNS_DIR", ROOT.parent / "oracle-runs"))
+CREATE_BATCH = Path(os.environ.get("ORACLE_CREATE_BATCH", Path.home() / ".codex/skills/oracle-task-orchestrator/scripts/create_batch.py"))
 PROMPTS = {
     "verify": (ROOT / "prompts/verification-first.txt").read_text(encoding="utf-8").strip(),
     "horizon": (ROOT / "prompts/question-horizon.txt").read_text(encoding="utf-8").strip(),

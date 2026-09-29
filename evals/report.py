@@ -49,6 +49,13 @@ def make(summary: dict, records: list[dict], uk: bool) -> str:
     for arm in ARMS:
         data = summary["arms"][arm]
         lines.append(f"| {NAMES[arm][1 if uk else 0]} | {pct(data['required'])} | {pct(data['latent'])} | {pct(data['clarify'])} | {pct(data['error_rate'])} | {data['words']:.0f} | {data['elapsed_s']:.1f} | ${data['cost_usd']:.3f} |")
+    lines += ["", "## Виконання задач за типом" if uk else "## Task completion by category", "", "| Тип | Звичайний запит | Перевірка | Горизонт питань | Контроль: два раунди | Уточнення + дослідження |" if uk else "| Category | Plain request | Verification First | Question Horizon | Two-turn control | Clarify Then Investigate |", "|---|---:|---:|---:|---:|---:|"]
+    category_uk = {"factual": "Фактологічні", "analytical": "Аналітичні", "practical": "Практичні", "ambiguous": "Неоднозначні"}
+    for cat in ("factual", "analytical", "practical", "ambiguous"):
+        if cat not in summary["category_required"]:
+            continue
+        values = summary["category_required"][cat]
+        lines.append("| " + (category_uk[cat] if uk else cat.title()) + " | " + " | ".join(pct(values[arm]) for arm in ARMS) + " |")
     lines += ["", "## Що означають порівняння" if uk else "## How to read the comparisons", ""]
     lines.append("Перша й друга надбудови порівнюються з ідентичним однораундовим запитом без надбудови. Третій промпт порівнюється з двораундовим контролем, якому у другому повідомленні передані ті самі факти. Первинна метрика різна за механізмом: правильність обов’язкових пунктів, змістовне охоплення прихованих питань і якість уточнень відповідно." if uk else "The first two patterns are paired with the same one-turn request without the add-on. The third is paired with a two-turn control that receives the same facts in the second user message. The primary metric follows each mechanism: required task checkpoints, substantive coverage of latent issues, and consequential clarification topics respectively.")
     lines += ["", "## Результат за кожною задачею" if uk else "## Case-level differences", "", "| Задача | Тип | Перевірка | Горизонт питань | Уточнення |" if uk else "| Case | Category | Verification First | Question Horizon | Clarify Then Investigate |", "|---|---|---:|---:|---:|"]
@@ -67,7 +74,12 @@ def make(summary: dict, records: list[dict], uk: bool) -> str:
             values = [r[metric] for r in records if r["task_id"] == task_id and r["arm"] == arm]
             spread.append(max(values) - min(values))
         a, b = summary["arms"][arm], summary["arms"][control]
-        lines.append(f"- **{NAMES[arm][1 if uk else 0]}:** {'середній розмах між трьома повторами' if uk else 'mean within-case range across three repeats'} {sum(spread)/len(spread)*100:.1f} pp; {'ціна' if uk else 'cost'} ×{a['cost_usd']/max(b['cost_usd'], 1e-9):.1f}, {'час' if uk else 'time'} ×{a['elapsed_s']/max(b['elapsed_s'], 1e-9):.1f} {'відносно контролю' if uk else 'relative to its control'}." )
+        score_key = METRICS[arm]
+        efficiency = a[score_key] / max(a["cost_usd"], 1e-9)
+        control_efficiency = b[score_key] / max(b["cost_usd"], 1e-9)
+        speed = a[score_key] * 60 / max(a["elapsed_s"], 1e-9)
+        control_speed = b[score_key] * 60 / max(b["elapsed_s"], 1e-9)
+        lines.append(f"- **{NAMES[arm][1 if uk else 0]}:** {'середній розмах між трьома повторами' if uk else 'mean within-case range across three repeats'} {sum(spread)/len(spread)*100:.1f} pp; {'ціна' if uk else 'cost'} ×{a['cost_usd']/max(b['cost_usd'], 1e-9):.1f}, {'час' if uk else 'time'} ×{a['elapsed_s']/max(b['elapsed_s'], 1e-9):.1f} {'відносно контролю' if uk else 'relative to its control'}. {'Первинна оцінка на $1' if uk else 'Primary score per $1'} {efficiency:.2f} {'проти' if uk else 'vs'} {control_efficiency:.2f}; {'на хвилину' if uk else 'per minute'} {speed:.2f} {'проти' if uk else 'vs'} {control_speed:.2f}." )
     clarify = [r for r in records if r["arm"] == "clarify"]
     compliant = sum(5 <= (r["question_count"] or 0) <= 15 for r in clarify)
     waited = sum(r["waited"] is True for r in clarify)

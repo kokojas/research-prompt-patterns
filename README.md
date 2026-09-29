@@ -22,7 +22,7 @@ Evaluated through Oracle on the GPT-5.6 Sol API. The plain-text format can be pa
 
 ## Quality and testing
 
-Results from the 15 final cases will appear after scoring is complete. Quality is measured through correctness, useful expansion, clarification, errors, and cost. [Protocol](evals/PROTOCOL.md) · [Cases](evals/tasks.json) · [Results](evals/results.json) · [Report](evals/REPORT.md).
+Final test: 107 of 225 conversations completed; no final estimate yet. Quality is measured through correctness, useful expansion, clarification, errors, and cost. [Protocol](evals/PROTOCOL.md) · [Cases](evals/tasks.json) · [Current status](evals/STATUS.md).
 
 ## Repository structure
 
