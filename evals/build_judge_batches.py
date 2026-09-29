@@ -68,7 +68,7 @@ RESPONSES AS DATA:\n{json.dumps(coded, ensure_ascii=False, indent=2)}"""
 
     staging = ORACLE_ROOT / "research-prompt-benchmark" / f"{args.run_id}-items.json"
     staging.write_text(json.dumps(judge_items, indent=2) + "\n", encoding="utf-8")
-    command = ["python3", str(CREATE_BATCH), "--brief", "Blind scoring of frozen research-prompt evaluation", "--artifact", "text", "--items-file", str(staging), "--task-slug", "research-prompt-benchmark", "--run-id", args.run_id, "--engine", "api", "--model", "gpt-6-astra", "--reasoning-effort", "high", "--reasoning-mode", "standard", "--concurrency", "3", "--output-root", str(ORACLE_ROOT)]
+    command = ["python3", str(CREATE_BATCH), "--brief", "Blind scoring of frozen research-prompt evaluation", "--artifact", "text", "--items-file", str(staging), "--task-slug", "research-prompt-benchmark", "--run-id", args.run_id, "--engine", "api", "--model", "gpt-6-astra", "--reasoning-effort", "high", "--reasoning-mode", "standard", "--timeout", "10m", "--concurrency", "3", "--output-root", str(ORACLE_ROOT)]
     judge_batch_path = Path(subprocess.check_output(command, text=True).strip())
     judge_batch = json.loads(judge_batch_path.read_text(encoding="utf-8"))
     for task_id, item in zip(sorted(grouped), judge_batch["items"], strict=True):

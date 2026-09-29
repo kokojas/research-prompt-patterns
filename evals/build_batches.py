@@ -76,6 +76,7 @@ def main() -> None:
         "--task-slug", "research-prompt-benchmark", "--run-id", args.run_id,
         "--engine", "api", "--model", "gpt-5.6-sol", "--reasoning-effort", "high",
         "--reasoning-mode", "standard", "--independent-replicates",
+        "--timeout", "10m",
         "--concurrency", str(args.concurrency), "--output-root", str(ORACLE_ROOT),
     ]
     batch_path = Path(subprocess.check_output(command, text=True).strip())
