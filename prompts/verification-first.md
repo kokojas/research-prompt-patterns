@@ -6,7 +6,7 @@ A compact contract for checking assumptions, alternatives, calculations, and unc
 |---|---|
 | Category | Analytical reliability |
 | Version | 1.0.0 |
-| Tested model | GPT-5.6 Sol API via Oracle 0.21.3 |
+| Tested model | GPT-5.6 Sol · ChatGPT browser via Oracle |
 | Last verified | 2026-09-29 |
 
 ![Alternative answers pass through verification gates.](../docs/assets/illustrations/verification-paths.png)
@@ -61,4 +61,4 @@ It cannot switch the model's actual effort setting or guarantee that verificatio
 
 ## Evaluation
 
-Protocol, scores, and raw responses: [Evaluation](https://kokojas.github.io/research-prompt-patterns/evaluation.html) · [Protocol](../evals/PROTOCOL.md).
+Protocol, scores, and raw responses: [Evaluation](https://kokojas.github.io/research-prompt-patterns/evaluation.html) · [Protocol](../evals/BROWSER_WEB_PROTOCOL.md).

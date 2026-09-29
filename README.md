@@ -18,11 +18,11 @@ Open the relevant prompt, copy its English text, and append it to your task requ
 
 ## Compatibility
 
-Evaluated through Oracle on the GPT-5.6 Sol API. The plain-text format can be pasted into ChatGPT, Claude, and Gemini; behavior in those interfaces and models has not been measured here.
+A browser study with GPT-5.6 Sol, High, and Web Search is running. The prompt text can be used in ChatGPT, Claude, and Gemini; other model families have not been evaluated.
 
 ## Quality and testing
 
-Final test: 107 of 225 conversations completed; no final estimate yet. Quality is measured through correctness, useful expansion, clarification, errors, and cost. [Protocol](evals/PROTOCOL.md) · [Cases](evals/tasks.json) · [Current status](evals/STATUS.md).
+Pilot complete; 225 browser conversations are running with concurrency 3. No conclusion yet. Quality is measured through correctness, useful expansion, clarification, sources, errors, and time. [Protocol](evals/BROWSER_WEB_PROTOCOL.md) · [Cases](evals/browser-web-tasks.json) · [Current status](evals/STATUS.md).
 
 ## Repository structure
 

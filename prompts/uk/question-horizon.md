@@ -6,7 +6,7 @@
 |---|---|
 | Категорія | Випереджальне дослідження |
 | Версія | 1.0.0 |
-| Тестована модель | GPT-5.6 Sol API via Oracle 0.21.3 |
+| Тестована модель | GPT-5.6 Sol · ChatGPT browser via Oracle |
 | Остання перевірка | 2026-09-29 |
 
 ![Явні питання ведуть до менш очевидних залежностей.](../../docs/assets/illustrations/question-tree.png)
@@ -81,4 +81,4 @@ Do not expose private chain-of-thought. Show only the resulting question structu
 
 ## Результати тесту
 
-Методика, оцінки та сирі відповіді: [Оцінювання](https://kokojas.github.io/research-prompt-patterns/uk/evaluation.html) · [Протокол](../../evals/PROTOCOL.md).
+Методика, оцінки та сирі відповіді: [Оцінювання](https://kokojas.github.io/research-prompt-patterns/uk/evaluation.html) · [Протокол](../../evals/BROWSER_WEB_PROTOCOL.md).

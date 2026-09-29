@@ -6,7 +6,7 @@
 |---|---|
 | Категорія | Надійність аналізу |
 | Версія | 1.0.0 |
-| Тестована модель | GPT-5.6 Sol API via Oracle 0.21.3 |
+| Тестована модель | GPT-5.6 Sol · ChatGPT browser via Oracle |
 | Остання перевірка | 2026-09-29 |
 
 ![Альтернативні відповіді проходять перевірки.](../../docs/assets/illustrations/verification-paths.png)
@@ -61,4 +61,4 @@ Provide the final conclusions, supporting evidence, important caveats, and conci
 
 ## Результати тесту
 
-Методика, оцінки та сирі відповіді: [Оцінювання](https://kokojas.github.io/research-prompt-patterns/uk/evaluation.html) · [Протокол](../../evals/PROTOCOL.md).
+Методика, оцінки та сирі відповіді: [Оцінювання](https://kokojas.github.io/research-prompt-patterns/uk/evaluation.html) · [Протокол](../../evals/BROWSER_WEB_PROTOCOL.md).

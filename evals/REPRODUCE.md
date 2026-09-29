@@ -1,41 +1,21 @@
-# Reproducing the comparison
+# Reproducing the browser comparison
 
-The published prompts and final-case rubric are fixed in `prompts/*.txt` and `evals/tasks.json`. The pilot uses separate cases and is excluded from final estimates. Runs use Oracle 0.21.3 with an OpenAI API key that can access `gpt-5.6-sol` and `gpt-6-astra`.
+The active comparison uses `oracle-task-orchestrator` with GPT-5.6 Sol, verified High, Web Search, and an isolated ChatGPT project. The frozen [protocol](BROWSER_WEB_PROTOCOL.md), [15 cases](browser-web-tasks.json), [pilot cases](browser-web-pilot-tasks.json), and [batch builder](build_browser_batches.py) are in this directory. `preregistration.json` inside each run records case and prompt hashes before model execution.
 
-Oracle's batch wrapper is the local `oracle-task-orchestrator` skill. Its `create_batch.py` and `run_batch.py` paths default to `~/.codex/skills/oracle-task-orchestrator/scripts/`; set `ORACLE_CREATE_BATCH` if the skill is elsewhere. Set `ORACLE_RUNS_DIR` to keep raw sessions outside this repository. The default is a sibling `oracle-runs/` folder.
+The local Oracle engine is version `0.21.3-chatwork.1`, a compatibility build for the ChatGPT browser layout. It is documented in the local engine repair report; an official upstream release should be tested separately before substitution.
 
 ```bash
-export ORACLE_RUNS_DIR="$(pwd)/../oracle-runs"
-export ORACLE_CREATE_BATCH="$HOME/.codex/skills/oracle-task-orchestrator/scripts/create_batch.py"
-
-python3 evals/build_batches.py --pilot --repeats 1 --run-id pilot-replication --concurrency 2
+python3 evals/build_browser_batches.py --pilot --repeats 1 --run-id browser-web-pilot-20260929 --concurrency 3
 python3 "$HOME/.codex/skills/oracle-task-orchestrator/scripts/run_batch.py" \
-  --batch "$ORACLE_RUNS_DIR/research-prompt-benchmark/pilot-replication/batch.json" \
-  --resume --concurrency 2
-
-python3 evals/build_batches.py --repeats 3 --run-id final-replication --concurrency 3
-python3 "$HOME/.codex/skills/oracle-task-orchestrator/scripts/run_batch.py" \
-  --batch "$ORACLE_RUNS_DIR/research-prompt-benchmark/final-replication/batch.json" \
+  --batch "$(pwd)/../oracle-runs/research-prompt-benchmark/browser-web-pilot-20260929/batch.json" \
   --resume --concurrency 3
 
-python3 evals/build_judge_batches.py \
-  --source-batch "$ORACLE_RUNS_DIR/research-prompt-benchmark/final-replication/batch.json" \
-  --run-id final-judge-replication
+python3 evals/build_browser_batches.py --repeats 3 --run-id browser-web-final-20260929 --concurrency 3
 python3 "$HOME/.codex/skills/oracle-task-orchestrator/scripts/run_batch.py" \
-  --batch "$ORACLE_RUNS_DIR/research-prompt-benchmark/final-judge-replication/batch.json" \
-  --resume --concurrency 2
-
-python3 evals/analyze.py \
-  --source-batch "$ORACLE_RUNS_DIR/research-prompt-benchmark/final-replication/batch.json" \
-  --judge-batch "$ORACLE_RUNS_DIR/research-prompt-benchmark/final-judge-replication/batch.json" \
-  --out-dir evals
-
-python3 -m pip install matplotlib
-python3 evals/plot.py
-python3 evals/report.py
-python3 site/build.py
+  --batch "$(pwd)/../oracle-runs/research-prompt-benchmark/browser-web-final-20260929/batch.json" \
+  --resume --concurrency 3
 ```
 
-The grader sees shuffled response IDs rather than arm labels. `evals/analyze.py` validates the IDs and score-array lengths before computing task-balanced estimates. The same `results.json` and `summary.json` drive the report, site, and Matplotlib figure. Inspect `evals/AUDIT.md` for manual score checks and corrections.
+Batch creation must use a **new run ID** for an independent replication; the commands above refer to the existing frozen runs. Resume the existing final batch if interrupted. Completed items are skipped. Before retrying a failed item, inspect its transcript and manifest to establish whether a user message reached the website; document and exclude any invalid partial conversation. The older API run with 107 responses is archived and excluded.
 
-Oracle API sessions can hit provider limits. Resume the same batch after transient rate limits; never count a failed item as a response. If the account runs out of credits, restore billing before resuming. The saved completed sessions are skipped by `--resume`.
+A successful run has `mode=browser`, a nonempty `chat.md`, direct source URLs where required, verified `browserModelSelection` for GPT-5.6 Sol, verified `browserThinkingSelection` with `resolvedLabel=High`, and `--browser-research search` in its command. Browser token values are estimates; do not interpret them as API charges or observed private reasoning.

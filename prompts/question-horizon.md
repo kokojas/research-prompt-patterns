@@ -6,7 +6,7 @@ Turn one question into a bounded tree of prerequisites, likely follow-ups, exper
 |---|---|
 | Category | Anticipatory research |
 | Version | 1.0.0 |
-| Tested model | GPT-5.6 Sol API via Oracle 0.21.3 |
+| Tested model | GPT-5.6 Sol · ChatGPT browser via Oracle |
 | Last verified | 2026-09-29 |
 
 ![Visible questions branch into less obvious dependencies.](../docs/assets/illustrations/question-tree.png)
@@ -81,4 +81,4 @@ The inferred goal can be wrong. A long question tree can bury the direct answer 
 
 ## Evaluation
 
-Protocol, scores, and raw responses: [Evaluation](https://kokojas.github.io/research-prompt-patterns/evaluation.html) · [Protocol](../evals/PROTOCOL.md).
+Protocol, scores, and raw responses: [Evaluation](https://kokojas.github.io/research-prompt-patterns/evaluation.html) · [Protocol](../evals/BROWSER_WEB_PROTOCOL.md).

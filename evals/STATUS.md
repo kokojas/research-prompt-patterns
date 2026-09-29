@@ -1,9 +1,9 @@
 # Evaluation status
 
-The three-case pilot completed and checked the Oracle engine, two-turn continuation, and blind scoring format. The separate final batch was preregistered for 15 cases × five conditions × three independent repetitions (225 conversations).
+A new browser-based, official-source comparison started on **29 September 2026** through Oracle's `oracle-task-orchestrator`. It uses GPT-5.6 Sol with verified High thinking and Web Search in the isolated ChatGPT project. The runner has **three concurrent conversations**. The frozen design contains **15 distinct research cases × 5 conditions × 3 independent repetitions = 225 conversations**.
 
-As of 2026-09-29, 107 final conversations completed and 118 did not complete. Most incomplete sessions were rejected because the OpenAI API account ran out of credits; one hit a transient rate limit and another timed out. The completed sessions and their usage records are preserved in the separate Oracle run directory. The final comparison is **not yet scored or interpretable**: this repository does not report a final winner from the partial batch.
+A separate 15-conversation pilot completed successfully. All pilot runs saved responses with direct source URLs; the model and High setting were verified, including the six two-turn conversations. Pilot responses are excluded from the final analysis.
 
-Oracle 0.21.3 browser-mode smoke tests were also attempted. Strict model selection could not locate ChatGPT's model selector. The `current` and `ignore` picker strategies reached the composer but could not confirm that a short prompt was submitted. The browser path was therefore not substituted for the API runs.
+The final batch is **in progress**. No comparison or winner is reported until all valid runs are complete and graded. See [the browser protocol](BROWSER_WEB_PROTOCOL.md), [15 cases and scoring anchors](browser-web-tasks.json), and [the browser batch builder](build_browser_batches.py). Raw run logs and answers are saved separately in the Oracle experiment directory while the study runs.
 
-After API billing is restored, the remaining items can be run with `--resume --concurrency 2` against the existing final batch; completed items will be skipped. The blind judge batch, manual audit, report, and charts follow only after all 225 conversations are complete. See [REPRODUCE.md](REPRODUCE.md) for the full workflow.
+The earlier API experiment stopped after 107 of 225 conversations because of account credits. Those responses are **superseded** and will not be mixed with browser results. Its original [protocol](PROTOCOL.md) and [cases](tasks.json) remain for historical audit only.

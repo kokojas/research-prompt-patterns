@@ -1,3 +1,5 @@
+> **Historical protocol.** This self-contained API study was superseded by the [browser web-research protocol](BROWSER_WEB_PROTOCOL.md) on 2026-09-29. Its 107 completed responses are excluded from the new comparison.
+
 # Evaluation protocol
 
 Protocol frozen before the final runs on 2026-09-29. The pilot began while the evaluation tooling was being checked. The prompts, final cases, and criteria are in this repository; raw Oracle outputs and usage records are kept in a separate experiment directory and the publishable extracts are copied back after scoring.

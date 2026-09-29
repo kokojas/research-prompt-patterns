@@ -1,0 +1,422 @@
+[
+  {
+    "id": "F01",
+    "category": "factual",
+    "seed": "Which of the new NIST post-quantum standards should I read for our encryption and signatures?",
+    "prompt": "Search NIST's final publication pages for FIPS 203, 204, and 205. A memo claims all three are encryption algorithms and were released on different days. Correct it: give each standard's final publication date, algorithm name, and whether it establishes keys or creates signatures. Cite the individual official pages with direct URLs.",
+    "required": [
+      "All three final publication pages date to 13 August 2024",
+      "FIPS 203 specifies ML-KEM, a key-encapsulation mechanism",
+      "FIPS 204 specifies ML-DSA, a digital-signature algorithm",
+      "FIPS 205 specifies SLH-DSA, a digital-signature algorithm",
+      "The memo’s all-encryption and differing-day claims are false"
+    ],
+    "latent": [
+      "Distinguish key establishment from data encryption",
+      "Distinguish final standards from earlier drafts or later errata",
+      "Explain why signatures and KEMs solve different needs"
+    ],
+    "clarify": [
+      "Which cryptographic functions need replacement",
+      "Whether the user needs standards or implementation guidance",
+      "Which systems and retention horizons matter"
+    ],
+    "sources": [
+      "https://csrc.nist.gov/pubs/fips/203/final",
+      "https://csrc.nist.gov/pubs/fips/204/final",
+      "https://csrc.nist.gov/pubs/fips/205/final"
+    ]
+  },
+  {
+    "id": "F02",
+    "category": "factual",
+    "seed": "What changed between WCAG 2.1 and 2.2 for our accessibility backlog?",
+    "prompt": "Check W3C's WCAG 2.2 change summary and normative guideline. A colleague says WCAG 2.2 merely renames 2.1 and Focus Appearance is AA. Identify how many success criteria were added, which older criterion was removed, and the conformance levels of Focus Not Obscured (Minimum), Focus Appearance, and Target Size (Minimum). Link the relevant W3C pages.",
+    "required": [
+      "WCAG 2.2 added nine success criteria relative to 2.1",
+      "4.1.1 Parsing was removed as obsolete",
+      "Focus Not Obscured (Minimum) is AA",
+      "Focus Appearance is AAA",
+      "Target Size (Minimum) is AA"
+    ],
+    "latent": [
+      "Distinguish the Minimum and Enhanced focus criteria",
+      "Note that a prior-version contractual requirement might still mention 4.1.1",
+      "Separate normative criteria from explanatory guidance"
+    ],
+    "clarify": [
+      "Which WCAG level and version the organization targets",
+      "Which user barriers are present",
+      "Whether another policy also requires WCAG 2.1"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+      "https://www.w3.org/TR/WCAG22/"
+    ]
+  },
+  {
+    "id": "F03",
+    "category": "factual",
+    "seed": "What happened to OSIRIS-REx after it brought back Bennu material?",
+    "prompt": "Use NASA mission and sample-return pages. A timeline says the whole OSIRIS-REx spacecraft landed on Earth in 2020 and then continued unchanged to Apophis. Reconstruct the collection and Earth-delivery dates, what actually landed, and the spacecraft's later name and destination. Cite direct NASA URLs.",
+    "required": [
+      "Bennu sample was collected in October 2020",
+      "The sample-return capsule landed on 24 September 2023",
+      "The whole spacecraft did not land on Earth",
+      "After capsule release the spacecraft continued as OSIRIS-APEX toward Apophis",
+      "The original timeline confuses collection, capsule return, and spacecraft continuation"
+    ],
+    "latent": [
+      "Distinguish spacecraft and capsule",
+      "Explain the mission rename rather than treating it as a second sample return",
+      "Check the planned versus completed events"
+    ],
+    "clarify": [
+      "Whether the audience needs a technical or public timeline",
+      "Which event date needs precision",
+      "Whether the new mission or sample curation matters"
+    ],
+    "sources": [
+      "https://science.nasa.gov/mission/osiris-rex/",
+      "https://www.nasa.gov/news-release/nasas-first-asteroid-sample-has-landed-now-secure-in-clean-room/"
+    ]
+  },
+  {
+    "id": "F04",
+    "category": "factual",
+    "seed": "Do NOAA and WMO disagree about how warm 2024 was?",
+    "prompt": "Find the NOAA/NCEI annual 2024 global report and WMO's State of the Global Climate 2024. One note says NOAA reports +1.29°C while WMO reports +1.55°C, so one agency must be wrong. State each figure and baseline, whether both call 2024 the warmest year, and whether the raw numbers are directly comparable. Cite both primary reports.",
+    "required": [
+      "NOAA reports +1.29°C versus the 20th-century average",
+      "WMO reports about +1.55°C versus the 1850–1900 baseline",
+      "Both identify 2024 as the warmest observed year",
+      "The numbers use different baselines and are not directly contradictory"
+    ],
+    "latent": [
+      "WMO provides an uncertainty range",
+      "NOAA also gives a preindustrial comparison of about +1.46°C",
+      "Dataset/method differences remain after baseline harmonization"
+    ],
+    "clarify": [
+      "Which baseline the user needs",
+      "Whether the comparison is for communication or analysis",
+      "Whether uncertainty needs to be quantified"
+    ],
+    "sources": [
+      "https://www.ncei.noaa.gov/news/global-climate-202413",
+      "https://public.wmo.int/sites/default/files/2025-03/WMO-1368-2024_en.pdf"
+    ]
+  },
+  {
+    "id": "A01",
+    "category": "analytical",
+    "seed": "Is our proposed GitHub fork CI workflow safe?",
+    "prompt": "Our public repository proposes a `pull_request_target` workflow that checks out each fork PR's head, runs its tests, and passes a registry token to the job so maintainers can publish from the same workflow. Investigate GitHub's official security and workflow documentation. Explain the trust boundary, the specific attack path, and a safer split between untrusted tests and privileged publishing. State the conditions under which `pull_request_target` can be used safely, with links.",
+    "required": [
+      "Pull-request head code is untrusted",
+      "pull_request_target has base-repository privileges and can access secrets",
+      "Executing fork code with that event can exfiltrate token or compromise repository",
+      "Use unprivileged pull_request testing without secrets",
+      "Keep publishing in a separate trusted workflow and minimize token permissions"
+    ],
+    "latent": [
+      "A base-branch-only labeling workflow can use pull_request_target without executing fork code",
+      "Artifact handoff also requires validation",
+      "Fork approval and read-only defaults are safeguards, not an excuse to mix privileges"
+    ],
+    "clarify": [
+      "Whether fork PRs are accepted",
+      "Which secrets and publish actions are needed",
+      "Whether maintainers approve external workflow runs",
+      "Which token scopes are actually required"
+    ],
+    "sources": [
+      "https://docs.github.com/en/actions/reference/security/securely-using-pull_request_target",
+      "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+    ]
+  },
+  {
+    "id": "A02",
+    "category": "analytical",
+    "seed": "Did the Paris 1.5°C goal fail because of the 2024 record?",
+    "prompt": "A newsletter says WMO estimated 2024 at about 1.55°C above preindustrial, therefore the Paris Agreement's 1.5°C long-term target was definitively breached that year. Compare WMO's 2024 assessment and explanation of the Paris target. Evaluate the inference, identify what can and cannot be concluded from a single annual observation, and cite the relevant WMO pages.",
+    "required": [
+      "WMO estimates 2024 annual anomaly about +1.55°C over 1850–1900",
+      "A single year above 1.5°C is not itself a long-term Paris threshold breach",
+      "The claim of definitive long-term breach is unsupported",
+      "2024 was a record year and is serious evidence of warming"
+    ],
+    "latent": [
+      "State WMO uncertainty around annual estimate",
+      "Distinguish annual variability from multiyear warming",
+      "Avoid asserting the target remains guaranteed reachable"
+    ],
+    "clarify": [
+      "Which exact Paris metric is intended",
+      "Whether discussion concerns annual temperature or long-term trend",
+      "Which decision the statement informs"
+    ],
+    "sources": [
+      "https://public.wmo.int/sites/default/files/2025-03/WMO-1368-2024_en.pdf",
+      "https://public.wmo.int/news/media-centre/global-temperature-likely-exceed-15degc-above-pre-industrial-level-temporarily-next-5-years"
+    ]
+  },
+  {
+    "id": "A03",
+    "category": "analytical",
+    "seed": "Can an earthquake magnitude tell us which town had worse shaking?",
+    "prompt": "Two towns are near the same earthquake. A coordinator says the epicenter's magnitude is 6.0, so both towns experienced intensity VI and should get identical damage priority. Research USGS's explanation of magnitude versus intensity and its ShakeMap product. Assess this inference and set out the evidence needed to prioritize inspections without inventing town-level intensities.",
+    "required": [
+      "One earthquake has a single magnitude but many location-specific intensities",
+      "Magnitude 6.0 alone cannot determine each town’s intensity",
+      "The identical-intensity and equal-priority inference is invalid",
+      "Use ShakeMap, observed intensity, exposure, vulnerability, and local reports to prioritize"
+    ],
+    "latent": [
+      "ShakeMap values may be modeled and updated",
+      "Ground conditions and distance affect shaking",
+      "Structural vulnerability changes damage even at similar intensity"
+    ],
+    "clarify": [
+      "Which quake and town coordinates",
+      "What ShakeMap/observed data are available",
+      "What infrastructure or vulnerable population is exposed"
+    ],
+    "sources": [
+      "https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity",
+      "https://earthquake.usgs.gov/data/shakemap/"
+    ]
+  },
+  {
+    "id": "A04",
+    "category": "analytical",
+    "seed": "Is Python setup.py entirely obsolete?",
+    "prompt": "A migration review claims that `setup.py` and Setuptools are deprecated, so a library must delete `setup.py` before it can publish wheels. Investigate PyPA's current guidance. Separate the status of the file/backend from direct `python setup.py` commands, give supported replacements for install/editable install/build, and explain when retaining `setup.py` can be legitimate. Cite direct PyPA guidance.",
+    "required": [
+      "The setup.py configuration file and Setuptools are not deprecated wholesale",
+      "Direct python setup.py command-line invocations are deprecated",
+      "Use python -m pip install . for install",
+      "Use python -m pip install --editable . for editable install",
+      "Use python -m build for distributions",
+      "A setup.py file can remain for valid configuration or custom build steps"
+    ],
+    "latent": [
+      "A pyproject.toml build-system declaration is strongly recommended",
+      "Migration can be incremental",
+      "Different build backends are possible, not obligatory"
+    ],
+    "clarify": [
+      "Whether setup.py has custom build logic",
+      "Which Python/build frontend versions matter",
+      "Whether both wheel and sdist are needed"
+    ],
+    "sources": [
+      "https://packaging.python.org/en/latest/discussions/setup-py-deprecated/",
+      "https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"
+    ]
+  },
+  {
+    "id": "P01",
+    "category": "practical",
+    "seed": "How should a small SaaS start a post-quantum migration?",
+    "prompt": "Our SaaS stores customer records for 20 years, uses TLS for transport and digital signatures on software updates, and has only one engineer available this quarter. Use NIST's final FIPS 203–205 pages and its migration guidance. Propose a realistic first 30-day plan, mapping key establishment and signatures to the right standards, naming the most useful inventory and vendor questions. Avoid claiming a universal deployment deadline for this company.",
+    "required": [
+      "Start with cryptographic asset discovery and inventory",
+      "Map key establishment to ML-KEM/FIPS 203",
+      "Map signatures to ML-DSA/FIPS 204 and possibly SLH-DSA/FIPS 205",
+      "Prioritize long-retention data and exposed dependencies",
+      "Include vendor/interoperability and staged testing",
+      "Avoid inventing a binding private-sector deadline"
+    ],
+    "latent": [
+      "Harvest-now-decrypt-later raises long-retention priority",
+      "Crypto agility and rollback matter",
+      "Check validation and operational support before deployment"
+    ],
+    "clarify": [
+      "Which TLS stack and vendors are used",
+      "Which data must stay confidential for how long",
+      "What signing infrastructure exists",
+      "Which compliance obligations apply"
+    ],
+    "sources": [
+      "https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/",
+      "https://csrc.nist.gov/pubs/fips/203/final",
+      "https://csrc.nist.gov/pubs/fips/204/final",
+      "https://csrc.nist.gov/pubs/fips/205/final"
+    ]
+  },
+  {
+    "id": "P02",
+    "category": "practical",
+    "seed": "What WCAG 2.2 fixes should our checkout team prioritize?",
+    "prompt": "Our checkout has a sticky footer that hides focused controls, a drag-only quantity slider, 18-pixel unspaced icon targets, and a form that asks users to retype the same address. We target WCAG 2.2 AA and have two weeks. Use W3C's WCAG 2.2 criteria and Understanding documents to map each symptom to relevant criteria, identify any important exceptions before declaring failures, and propose a testable fix order with direct W3C links.",
+    "required": [
+      "Map obscured keyboard focus to 2.4.11 AA",
+      "Map drag-only control to 2.5.7 AA",
+      "Map small targets to 2.5.8 AA subject to exceptions/spacing",
+      "Map repeated address entry to 3.3.7 A",
+      "Prioritize blocked checkout access and retest with keyboard/touch"
+    ],
+    "latent": [
+      "Focus Appearance 2.4.13 is AAA rather than the target AA",
+      "Target Size has exceptions",
+      "Evidence of repeated-entry exemption or essential need changes judgment"
+    ],
+    "clarify": [
+      "Which devices and input methods matter",
+      "Whether controls have alternative non-drag operation",
+      "Whether targets satisfy spacing exceptions",
+      "Whether the address is already available"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/WCAG22/",
+      "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
+    ]
+  },
+  {
+    "id": "P03",
+    "category": "practical",
+    "seed": "How can a GitHub project test external PRs and publish releases safely?",
+    "prompt": "A maintainer wants external fork PRs to run tests, post a PR label, and publish a package after a release. Draft a short workflow architecture using GitHub's official docs. Specify which event runs untrusted tests, how the label action can stay privileged without running fork code, where publishing belongs, and the minimum permissions/secrets each part needs. Include a concrete failure mode to avoid.",
+    "required": [
+      "Use pull_request for untrusted fork tests with no secrets/read-only token",
+      "Do not run fork head code with privileged pull_request_target",
+      "A limited base-code-only pull_request_target workflow may label PRs",
+      "Publish from a separate trusted release/tag workflow",
+      "Set least-privilege GITHUB_TOKEN permissions and limit secrets"
+    ],
+    "latent": [
+      "Untrusted artifacts and caches can cross trust boundaries",
+      "Environment approvals or trusted release provenance may help",
+      "Fork approval settings are additional controls"
+    ],
+    "clarify": [
+      "Whether external forks are enabled",
+      "How labels are assigned",
+      "Which registry token/release trigger is used",
+      "Whether a trusted human approval exists"
+    ],
+    "sources": [
+      "https://docs.github.com/en/actions/reference/security/securely-using-pull_request_target",
+      "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+    ]
+  },
+  {
+    "id": "P04",
+    "category": "practical",
+    "seed": "What should we change in a legacy Python packaging pipeline?",
+    "prompt": "Our library currently runs `python setup.py install`, `python setup.py develop`, and `python setup.py sdist` in CI. It also has custom Setuptools extension-building logic in setup.py. Use current PyPA official guidance to propose minimal build/install command replacements and a small `pyproject.toml` build-system declaration. Explain whether the custom setup.py must be removed, and give one validation step before releasing a wheel.",
+    "required": [
+      "Replace direct install with python -m pip install .",
+      "Replace develop with python -m pip install --editable .",
+      "Replace sdist/wheel invocation with python -m build",
+      "Add [build-system] with setuptools build backend and requirements",
+      "Retain custom setup.py logic if needed",
+      "Validate wheel build and install in clean environment"
+    ],
+    "latent": [
+      "Separate build dependency pinning from runtime dependencies",
+      "Check sdist content and editable behavior",
+      "Avoid assuming setup.py file itself is deprecated"
+    ],
+    "clarify": [
+      "Which build dependencies extensions need",
+      "Supported Python versions/platforms",
+      "Whether wheels and sdist are distributed",
+      "What CI environments are available"
+    ],
+    "sources": [
+      "https://packaging.python.org/en/latest/discussions/setup-py-deprecated/",
+      "https://packaging.python.org/en/latest/guides/modernize-setup-py-project/"
+    ]
+  },
+  {
+    "id": "U01",
+    "category": "ambiguous",
+    "seed": "Should we buy a heat pump for our cold-climate house?",
+    "prompt": "We live somewhere with cold winters and are deciding whether to replace our heater with a heat pump this year. We have not supplied the location, building envelope, existing heating fuel, ducts, bids, electricity price, or budget. Use current U.S. Department of Energy guidance as a starting point. Give a conditional decision framework and identify which facts would materially change the recommendation; do not invent a payback period or rebate. Cite direct official sources.",
+    "required": [
+      "Do not make a categorical buy/no-buy recommendation",
+      "Check heat load, cold-climate performance and backup needs",
+      "Discuss ducted versus ductless fit",
+      "Compare delivered bids, energy costs, and weatherization",
+      "Avoid fabricating local rebate or payback",
+      "Use direct DOE source evidence"
+    ],
+    "latent": [
+      "Sizing and installer quality can dominate nominal efficiency",
+      "Existing fuel and electricity tariffs affect economics",
+      "Comfort/cooling and resilience may matter"
+    ],
+    "clarify": [
+      "Location and design temperature",
+      "House heat loss and insulation",
+      "Current equipment/fuel and ducts",
+      "Local tariffs and quotes",
+      "Budget and comfort priorities"
+    ],
+    "sources": [
+      "https://www.energy.gov/energysaver/heat-pump-systems",
+      "https://bsesc.energy.gov/training-modules/hvac-cold-climate-heat-pump-sizing"
+    ]
+  },
+  {
+    "id": "U02",
+    "category": "ambiguous",
+    "seed": "Which town should our response team inspect first after an earthquake?",
+    "prompt": "We need to choose which of two towns to inspect first after an earthquake. We only know the event magnitude is 6.0; we have not supplied the location, ShakeMap, observed shaking, population, road access, or building stock. Search USGS guidance and explain a conditional triage rule, what source data to retrieve first, and why magnitude alone is insufficient. Do not make up damage or town-level intensity.",
+    "required": [
+      "Do not select a town from magnitude alone",
+      "Distinguish event magnitude from local intensity",
+      "Seek USGS ShakeMap/observed shaking and exposure",
+      "Account for vulnerable people, structures, and access",
+      "Give an actionable conditional priority rule"
+    ],
+    "latent": [
+      "ShakeMap is an estimate and may update",
+      "Road/communications outages bias reports",
+      "Critical facilities may trump total population"
+    ],
+    "clarify": [
+      "Earthquake event ID and town locations",
+      "ShakeMap and observed impacts",
+      "Population and vulnerable infrastructure",
+      "Road access and response capacity"
+    ],
+    "sources": [
+      "https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity",
+      "https://earthquake.usgs.gov/data/shakemap/"
+    ]
+  },
+  {
+    "id": "U03",
+    "category": "ambiguous",
+    "seed": "Should our five-person team switch all signatures to post-quantum now?",
+    "prompt": "Our five-person software team hears that NIST finalized post-quantum standards. We ask whether to switch every software-update signature immediately. We have not supplied our signing stack, device fleet, verification path, update size limits, support lifetime, compliance scope, or rollback plan. Research official NIST material and give a conditional recommendation with the first evidence-gathering steps. Distinguish FIPS 204 and 205 and avoid inventing a mandatory deadline for us.",
+    "required": [
+      "Do not recommend an immediate blanket switch without deployment facts",
+      "Identify ML-DSA/FIPS 204 and SLH-DSA/FIPS 205 as signatures",
+      "Do not substitute ML-KEM/FIPS 203 for signatures",
+      "Inventory signing and verification dependencies",
+      "Plan compatibility tests, staged rollout, and rollback",
+      "Avoid asserting a universal private-team deadline"
+    ],
+    "latent": [
+      "Signature size/performance and verifier support may matter",
+      "Long-lived devices create migration constraints",
+      "Crypto agility and update-chain trust are relevant"
+    ],
+    "clarify": [
+      "Which devices and verifier stacks are deployed",
+      "Update size and performance constraints",
+      "Support horizon and regulatory scope",
+      "Ability to roll back and recover devices"
+    ],
+    "sources": [
+      "https://csrc.nist.gov/pubs/fips/204/final",
+      "https://csrc.nist.gov/pubs/fips/205/final",
+      "https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/"
+    ]
+  }
+]

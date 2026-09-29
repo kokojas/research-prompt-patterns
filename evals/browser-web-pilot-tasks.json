@@ -1,0 +1,72 @@
+[
+  {
+    "id": "PILOT01",
+    "category": "factual",
+    "seed": "When did NASA DART hit its target?",
+    "prompt": "Use NASA official pages to identify which body DART struck, its impact date, and whether its larger companion was the impact target. Cite direct NASA URLs.",
+    "required": [
+      "DART hit Dimorphos",
+      "Impact was 26 September 2022",
+      "Didymos was the larger companion rather than impact target"
+    ],
+    "latent": [
+      "Distinguish impact from launch",
+      "Differentiate two bodies"
+    ],
+    "clarify": [
+      "Whether date or orbital effect matters",
+      "Which target names are being confused"
+    ],
+    "sources": [
+      "https://science.nasa.gov/mission/dart/"
+    ]
+  },
+  {
+    "id": "PILOT02",
+    "category": "practical",
+    "seed": "How should our small project modernize packaging?",
+    "prompt": "Use PyPA guidance to recommend the first changes to a project that calls python setup.py install and has custom setup.py build logic. Cite direct official URLs.",
+    "required": [
+      "Direct setup.py invocation is deprecated",
+      "Use python -m pip install .",
+      "Retain custom setup.py when needed",
+      "Add pyproject.toml build system"
+    ],
+    "latent": [
+      "Validate a built wheel",
+      "Do not force a backend replacement"
+    ],
+    "clarify": [
+      "What custom logic exists",
+      "Which Python versions are supported"
+    ],
+    "sources": [
+      "https://packaging.python.org/en/latest/discussions/setup-py-deprecated/"
+    ]
+  },
+  {
+    "id": "PILOT03",
+    "category": "ambiguous",
+    "seed": "Should we replace our home heating system with a heat pump?",
+    "prompt": "We have no location, utility tariff, insulation, ducts, or bids. Use DOE heat-pump guidance and give a conditional recommendation, the high-value questions, and source URLs.",
+    "required": [
+      "Avoid categorical recommendation",
+      "Ask about climate, building and energy cost",
+      "Consider sizing and duct options",
+      "Cite DOE guidance"
+    ],
+    "latent": [
+      "Cold-climate models exist",
+      "Weatherization changes savings"
+    ],
+    "clarify": [
+      "Location and cold design temperature",
+      "Ductwork and heat loss",
+      "Current fuel and tariffs",
+      "Budget and bids"
+    ],
+    "sources": [
+      "https://www.energy.gov/energysaver/heat-pump-systems"
+    ]
+  }
+]

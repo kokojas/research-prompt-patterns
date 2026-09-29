@@ -6,7 +6,7 @@ First ask the few consequential questions; after the user's reply, investigate w
 |---|---|
 | Category | Two-round investigation |
 | Version | 1.0.0 |
-| Tested model | GPT-5.6 Sol API via Oracle 0.21.3 |
+| Tested model | GPT-5.6 Sol · ChatGPT browser via Oracle |
 | Last verified | 2026-09-29 |
 
 ![Round one gathers decision-changing answers; round two synthesizes evidence.](../docs/assets/illustrations/clarification-rounds.png)
@@ -72,4 +72,4 @@ It costs an extra user turn and can over-question simple tasks. If fewer than fi
 
 ## Evaluation
 
-Protocol, scores, and raw responses: [Evaluation](https://kokojas.github.io/research-prompt-patterns/evaluation.html) · [Protocol](../evals/PROTOCOL.md).
+Protocol, scores, and raw responses: [Evaluation](https://kokojas.github.io/research-prompt-patterns/evaluation.html) · [Protocol](../evals/BROWSER_WEB_PROTOCOL.md).
