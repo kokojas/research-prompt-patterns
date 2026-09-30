@@ -9,7 +9,7 @@
 - Matched contrasts: Verification First versus base; Question Horizon versus base; Clarify Then Investigate versus a two-turn base.
 - GPT-5.6 Sol, verified High, Web Search, browser engine, concurrency 3. The pilot and earlier API runs are excluded.
 - 28 invalid attempts were discarded and replaced with fresh runs. The final set has 225 successful dialogues.
-- [Extracted records](results/browser_web_local_records.json), [aggregate summary](results/browser_web_local_summary.json), and [focused audit log](results/browser_web_focused_audit.json) are the published analysis data. The records include the two turns of two-turn dialogues.
+- [Extracted records](results/browser_web_local_records.json), [aggregate summary](results/browser_web_local_summary.json), [frozen 45-dialogue audit sample](results/browser_web_audit_sample.json), and [focused audit log](results/browser_web_focused_audit.json) are the published analysis data. The records include the two turns of two-turn dialogues.
 
 ## Observable results
 
@@ -39,7 +39,7 @@ The Verification contrast changes sign to **−0.017** (95% task-bootstrap inter
 
 ## Focused audit and source limits
 
-A 45-dialogue sample (20%, nine per arm) included category-stratified random cases, within-task deviations, and all nine final exports with native citation markers but no direct URL. Each packet's answer opening, rubric evidence, first-turn questions, and source-host inventory was inspected; disputed criteria were checked against full saved answers. Eleven checkpoint marks were revised across nine dialogues. This review was not fully blind to condition and did not certify every material claim or link target.
+A 45-dialogue sample (20%, nine per arm) included category-stratified random cases, within-task deviations, and all nine final exports with native citation markers but no direct URL. The sample was frozen before corrections to the URL-host and question-line screen; its exact item list is published so later scoring changes do not silently change the reviewed set. Each packet's answer opening, rubric evidence, first-turn questions, and source-host inventory was inspected; disputed criteria were checked against full saved answers. Eleven checkpoint marks were revised across nine dialogues. This review was not fully blind to condition and did not certify every material claim or link target.
 
 There are 216 final replies with at least one direct task-relevant official-host URL and nine marker-only final exports. Two of the latter have a URL in the first assistant turn, but not the final one. URL presence says nothing by itself about whether a cited page supports the adjacent claim. Missing direct URLs are export/reproducibility defects, not automatically factual errors.
 
@@ -60,7 +60,7 @@ From the repository root, with the completed browser batch available locally:
 ```bash
 python3 evals/extract_browser_local.py --source-batch /path/to/browser-web-final-20260929/batch.json --out-dir /path/to/local-analysis
 python3 evals/score_browser_local.py --records /path/to/local-analysis/local_records.json --out-dir /path/to/local-analysis
-python3 evals/make_browser_audit_sample.py --records /path/to/local-analysis/local_scored_records.json --out /path/to/local-analysis/audit_sample.json
+cp evals/results/browser_web_audit_sample.json /path/to/local-analysis/audit_sample.json
 python3 evals/record_browser_focused_audit.py --sample /path/to/local-analysis/audit_sample.json --records /path/to/local-analysis/local_scored_records.json --out /path/to/local-analysis/focused_audit.json
 ```
 

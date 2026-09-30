@@ -1,0 +1,362 @@
+[
+  {
+    "item_id": "206-p03-base-r2",
+    "task_id": "P03",
+    "category": "practical",
+    "arm": "base",
+    "repeat": 2,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "58-p04-base-r1",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "base",
+    "repeat": 1,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "93-p04-base-r2",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "base",
+    "repeat": 2,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "192-u02-base-r1",
+    "task_id": "U02",
+    "category": "ambiguous",
+    "arm": "base",
+    "repeat": 1,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "04-p04-base-r3",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "base",
+    "repeat": 3,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "95-f03-base-r2",
+    "task_id": "F03",
+    "category": "factual",
+    "arm": "base",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "54-a03-base-r2",
+    "task_id": "A03",
+    "category": "analytical",
+    "arm": "base",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "20-f04-base-r1",
+    "task_id": "F04",
+    "category": "factual",
+    "arm": "base",
+    "repeat": 1,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "51-a04-base-r1",
+    "task_id": "A04",
+    "category": "analytical",
+    "arm": "base",
+    "repeat": 1,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "57-u03-verify-r1",
+    "task_id": "U03",
+    "category": "ambiguous",
+    "arm": "verify",
+    "repeat": 1,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "117-u03-verify-r2",
+    "task_id": "U03",
+    "category": "ambiguous",
+    "arm": "verify",
+    "repeat": 2,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "183-p02-verify-r2",
+    "task_id": "P02",
+    "category": "practical",
+    "arm": "verify",
+    "repeat": 2,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "154-f03-verify-r2",
+    "task_id": "F03",
+    "category": "factual",
+    "arm": "verify",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "145-a01-verify-r2",
+    "task_id": "A01",
+    "category": "analytical",
+    "arm": "verify",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "221-p04-verify-r3",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "verify",
+    "repeat": 3,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "189-a02-verify-r3",
+    "task_id": "A02",
+    "category": "analytical",
+    "arm": "verify",
+    "repeat": 3,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "102-p04-verify-r1",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "verify",
+    "repeat": 1,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "216-p03-verify-r1",
+    "task_id": "P03",
+    "category": "practical",
+    "arm": "verify",
+    "repeat": 1,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "98-p04-horizon-r1",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "horizon",
+    "repeat": 1,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "18-p02-horizon-r3",
+    "task_id": "P02",
+    "category": "practical",
+    "arm": "horizon",
+    "repeat": 3,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "96-p03-horizon-r1",
+    "task_id": "P03",
+    "category": "practical",
+    "arm": "horizon",
+    "repeat": 1,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "112-p04-horizon-r3",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "horizon",
+    "repeat": 3,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "151-f02-horizon-r3",
+    "task_id": "F02",
+    "category": "factual",
+    "arm": "horizon",
+    "repeat": 3,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "81-a02-horizon-r2",
+    "task_id": "A02",
+    "category": "analytical",
+    "arm": "horizon",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "194-u03-horizon-r2",
+    "task_id": "U03",
+    "category": "ambiguous",
+    "arm": "horizon",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "67-f02-horizon-r2",
+    "task_id": "F02",
+    "category": "factual",
+    "arm": "horizon",
+    "repeat": 2,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "225-a03-horizon-r2",
+    "task_id": "A03",
+    "category": "analytical",
+    "arm": "horizon",
+    "repeat": 2,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "116-p04-two-turn-base-r1",
+    "task_id": "P04",
+    "category": "practical",
+    "arm": "two_turn_base",
+    "repeat": 1,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "119-u02-two-turn-base-r3",
+    "task_id": "U02",
+    "category": "ambiguous",
+    "arm": "two_turn_base",
+    "repeat": 3,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "153-p02-two-turn-base-r1",
+    "task_id": "P02",
+    "category": "practical",
+    "arm": "two_turn_base",
+    "repeat": 1,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "100-a03-two-turn-base-r1",
+    "task_id": "A03",
+    "category": "analytical",
+    "arm": "two_turn_base",
+    "repeat": 1,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "101-a04-two-turn-base-r2",
+    "task_id": "A04",
+    "category": "analytical",
+    "arm": "two_turn_base",
+    "repeat": 2,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "16-f03-two-turn-base-r2",
+    "task_id": "F03",
+    "category": "factual",
+    "arm": "two_turn_base",
+    "repeat": 2,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "90-f04-two-turn-base-r1",
+    "task_id": "F04",
+    "category": "factual",
+    "arm": "two_turn_base",
+    "repeat": 1,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "99-f01-two-turn-base-r2",
+    "task_id": "F01",
+    "category": "factual",
+    "arm": "two_turn_base",
+    "repeat": 2,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "144-a02-two-turn-base-r3",
+    "task_id": "A02",
+    "category": "analytical",
+    "arm": "two_turn_base",
+    "repeat": 3,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "190-p03-clarify-r1",
+    "task_id": "P03",
+    "category": "practical",
+    "arm": "clarify",
+    "repeat": 1,
+    "reason": "native citation marker without direct URL"
+  },
+  {
+    "item_id": "48-u03-clarify-r1",
+    "task_id": "U03",
+    "category": "ambiguous",
+    "arm": "clarify",
+    "repeat": 1,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "137-u03-clarify-r2",
+    "task_id": "U03",
+    "category": "ambiguous",
+    "arm": "clarify",
+    "repeat": 2,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "220-a04-clarify-r2",
+    "task_id": "A04",
+    "category": "analytical",
+    "arm": "clarify",
+    "repeat": 2,
+    "reason": "large within-task deviation"
+  },
+  {
+    "item_id": "146-f03-clarify-r1",
+    "task_id": "F03",
+    "category": "factual",
+    "arm": "clarify",
+    "repeat": 1,
+    "reason": "category-stratified random draw"
+  },
+  {
+    "item_id": "197-f01-clarify-r3",
+    "task_id": "F01",
+    "category": "factual",
+    "arm": "clarify",
+    "repeat": 3,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "207-p02-clarify-r3",
+    "task_id": "P02",
+    "category": "practical",
+    "arm": "clarify",
+    "repeat": 3,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "08-f02-clarify-r2",
+    "task_id": "F02",
+    "category": "factual",
+    "arm": "clarify",
+    "repeat": 2,
+    "reason": "random draw"
+  },
+  {
+    "item_id": "36-f01-clarify-r2",
+    "task_id": "F01",
+    "category": "factual",
+    "arm": "clarify",
+    "repeat": 2,
+    "reason": "random draw"
+  }
+]
