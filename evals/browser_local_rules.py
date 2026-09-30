@@ -1,0 +1,151 @@
+"""Transparent phrase checks for the frozen web-case rubric.
+
+Each tuple is an AND of case-insensitive regexes. These checks locate explicit
+content; they are candidates for evidence review, not a semantic judge.
+"""
+
+R = {
+"F01": [
+ (r"(?:August|Aug\.?)[\s.]*13|13[\s.]+(?:August|Aug\.?)|13/08/2024|2024-08-13", r"203", r"204", r"205"),
+ (r"ML[- ]?KEM", r"(?:key[- ]?encapsulat|key[- ]?establish|shared secret|shared key)"),
+ (r"ML[- ]?DSA", r"signatur"),
+ (r"SLH[- ]?DSA", r"signatur"),
+ (r"(?:wrong|false|incorrect|not correct|misleading|do not|does not|neither)", r"(?:encrypt|different (?:day|date)|same (?:day|date))"),
+],
+"F02": [
+ (r"(?:nine|\b9\b).{0,60}(?:new|add|success criteria)|(?:new|add).{0,60}(?:nine|\b9\b).{0,30}success criteria",),
+ (r"4\.1\.1", r"(?:remov|obsolete|no longer)"),
+ (r"(?:2\.4\.11|Focus Not Obscured \(Minimum\)).{0,100}\bAA\b",),
+ (r"(?:2\.4\.13|Focus Appearance).{0,100}\bAAA\b",),
+ (r"(?:2\.5\.8|Target Size \(Minimum\)).{0,100}\bAA\b",),
+],
+"F03": [
+ (r"(?:Oct(?:ober)?\.?\s*20|20\s+Oct(?:ober)?)", r"2020", r"(?:Bennu|collect|sample)"),
+ (r"(?:Sept(?:ember)?\.?\s*24|24\s+Sept(?:ember)?)", r"2023", r"capsule"),
+ (r"(?:spacecraft|orbiter|main vehicle).{0,130}(?:did not|never|not).{0,50}land|(?:not|never).{0,60}(?:entire|whole|main) spacecraft",),
+ (r"OSIRIS[-– ]?APEX", r"Apophis"),
+ (r"(?:conflat|confus|mix|different|separate).{0,100}(?:collect|capsule|spacecraft|landing)|(?:collect|capsule).{0,80}(?:different|separate).{0,60}(?:spacecraft|event)",),
+],
+"F04": [
+ (r"1\.29", r"20th[- ]century|twentieth[- ]century"),
+ (r"1\.55", r"1850\s*[–-]\s*1900|pre[- ]industrial"),
+ (r"(?:NOAA|NCEI)", r"WMO", r"warmest|record[- ]warm"),
+ (r"(?:different|distinct).{0,50}baseline|baseline.{0,50}(?:different|distinct)|not directly compar|not contradict",),
+],
+"A01": [
+ (r"(?:fork|pull.request|PR).{0,80}(?:untrusted|attacker.control)|untrusted.{0,80}(?:fork|pull.request|PR)",),
+ (r"pull_request_target", r"(?:secret|privileg|write[- ]access|base.repo)"),
+ (r"(?:exfiltrat|steal|leak|compromis|malicious|send|transmit).{0,150}(?:token|secret|repo|credential)|(?:token|secret).{0,150}(?:exfiltrat|steal|leak|attacker|network|remote)",),
+ (r"\bpull_request\b", r"(?:no secrets?|without secrets?|read.only)"),
+ (r"(?:separate|trusted|release|tag).{0,130}(?:publish|registry)|(?:publish|registry).{0,130}(?:separate|trusted|release|tag)", r"(?:least.privileg|minimum permission|restrict.{0,20}permission|narrowly scoped|minimal.{0,20}permission)"),
+],
+"A02": [
+ (r"1\.55", r"2024", r"1850\s*[–-]\s*1900|pre[- ]industrial"),
+ (r"(?:single|one).{0,60}year.{0,130}(?:not|does not|cannot).{0,100}(?:breach|cross|determin|establish)|(?:not|does not|cannot).{0,100}(?:long.term|Paris).{0,100}(?:breach|cross)",),
+ (r"(?:unsupported|not justified|not prove|cannot conclude|not establish).{0,100}(?:definitive|long.term|Paris|breach)|(?:definitive|long.term).{0,100}(?:unsupported|not justified|not prove)",),
+ (r"(?:warmest|record)", r"(?:warming|serious|concerning|climate)"),
+],
+"A03": [
+ (r"(?:one|single).{0,60}magnitude", r"(?:many|different|varies|multiple).{0,80}intensit"),
+ (r"magnitude", r"(?:cannot|does not|insufficient|alone)", r"intensit"),
+ (r"(?:identical|equal|same).{0,80}(?:invalid|unjustified|cannot|not|unsupported)|(?:not|cannot).{0,70}(?:same|identical|equal).{0,70}(?:intensit|priority)",),
+ (r"ShakeMap", r"(?:exposure|population|vulnerab|building|local report|observed)"),
+],
+"A04": [
+ (r"setup\.py", r"Setuptools", r"(?:not deprecated|not obsolete|valid|still supported)"),
+ (r"python setup\.py", r"deprecated|avoid|no longer"),
+ (r"python\s+-m\s+pip\s+install\s+\.",),
+ (r"python\s+-m\s+pip\s+install\s+(?:--editable|-e)\s+\.",),
+ (r"python\s+-m\s+build",),
+ (r"setup\.py", r"(?:retain|keep|remain|custom|valid configuration)"),
+],
+"P01": [
+ (r"(?:inventory|inventor|discover|asset map)", r"cryptograph|TLS|key|signature"),
+ (r"ML[- ]?KEM", r"(?:FIPS\s*203|key[- ]?establish|key[- ]?encapsulat)"),
+ (r"ML[- ]?DSA", r"(?:FIPS\s*204|signatur)", r"(?:SLH[- ]?DSA|FIPS\s*205)"),
+ (r"(?:20.year|long[- ]?retention|long[- ]?lived|harvest.now|customer record)", r"(?:priorit|risk|expos|protect)"),
+ (r"(?:vendor|provider|supplier|stack)", r"(?:test|pilot|staged|interop|compatib)"),
+ (r"(?:no|not|avoid|cannot|do not).{0,100}(?:universal|mandatory|binding|deadline)|(?:deadline).{0,70}(?:depend|not|no)",),
+],
+"P02": [
+ (r"(?:2\.4\.11|Focus Not Obscured)", r"(?:sticky|footer|obscur|hidden|focus)"),
+ (r"(?:2\.5\.7|Dragging Movements)", r"(?:drag|slider|alternative)"),
+ (r"(?:2\.5\.8|Target Size)", r"(?:18.pixel|18\s*px|spacing|exception|24\s*[×x]\s*24)"),
+ (r"(?:3\.3\.7|Redundant Entry)", r"(?:address|retype|re.enter|repeated)"),
+ (r"(?:priorit|first|order|sequence)", r"(?:keyboard|touch|test|retest)"),
+],
+"P03": [
+ (r"\bpull_request\b", r"(?:read.only|without secrets?|no secrets?)"),
+ (r"pull_request_target", r"(?:never|do not|avoid|without).{0,100}(?:fork|untrusted|head|PR code)|(?:fork|untrusted|head).{0,100}(?:never|do not|avoid).{0,60}(?:run|execut)",),
+ (r"pull_request_target", r"(?:label|metadata)", r"(?:base.branch|trusted code|no.*execut|without.*execut)"),
+ (r"(?:release|tag|trusted).{0,100}publish|publish.{0,100}(?:release|tag|trusted)",),
+ (r"(?:least.privileg|minimal permission|read.only|contents:\s*read)", r"(?:secrets?|token|permission)"),
+],
+"P04": [
+ (r"python\s+-m\s+pip\s+install\s+\.",),
+ (r"python\s+-m\s+pip\s+install\s+(?:--editable|-e)\s+\.",),
+ (r"python\s+-m\s+build",),
+ (r"\[build-system\]", r"setuptools\.build_meta|build-backend", r"requires"),
+ (r"setup\.py", r"(?:keep|retain|remain|custom|extension)"),
+ (r"(?:clean|fresh|isolat).{0,80}(?:environment|venv|virtual environment)", r"(?:wheel|\.whl).{0,100}(?:install|test|validat)|(?:install|test|validat).{0,100}(?:wheel|\.whl)"),
+],
+"U01": [
+ (r"(?:depends|conditional|cannot.{0,30}recommend|not.{0,30}(?:buy|purchase)|insufficient|need.{0,30}(?:details|facts|data))",),
+ (r"(?:heat load|heat loss|sizing|design temperature)", r"(?:cold.climate|backup|low.temperature|extreme cold)"),
+ (r"ducted", r"ductless"),
+ (r"(?:bid|quote|contractor)", r"(?:electricity|fuel|energy cost|tariff)", r"(?:weatheriz|insulat|envelope)"),
+ (r"(?:rebate|payback)", r"(?:cannot|not|unknown|without|avoid|do not|don't|depends)"),
+ (r"https?://[^\s)]*(?:energy\.gov|energystar\.gov)",),
+],
+"U02": [
+ (r"(?:cannot|not enough|insufficient|do not).{0,120}(?:choose|select|priorit|rank|tell).{0,100}(?:town|magnitude)|(?:magnitude).{0,100}(?:cannot|not enough|insufficient).{0,80}(?:town|priorit)",),
+ (r"magnitude", r"(?:local|location.specific|varies|different).{0,80}intensit|intensit.{0,80}(?:local|varies|different)"),
+ (r"ShakeMap", r"(?:observed|reports?|exposure|population)"),
+ (r"(?:vulnerab|critical|hospital|infrastructure|building)", r"(?:road|access|route|capacity)"),
+ (r"(?:if|when|conditional|priorit).{0,100}(?:higher|greater|worse|first|urgent).{0,120}(?:shak|expos|damage|vulnerab|access)",),
+],
+"U03": [
+ (r"(?:not|do not|avoid|wouldn't).{0,100}(?:blanket|all|every|immediate|switch)|(?:blanket|all|every).{0,100}(?:not|avoid|premature)",),
+ (r"ML[- ]?DSA", r"(?:FIPS\s*204|signature)", r"(?:SLH[- ]?DSA|FIPS\s*205)"),
+ (r"ML[- ]?KEM", r"(?:not|isn't|rather than|instead of).{0,100}signatur|key[- ]?encapsulat"),
+ (r"(?:inventory|map|audit|identify)", r"(?:sign|verif|device|fleet|stack)"),
+ (r"(?:compatib|test|pilot)", r"(?:staged|rollout|rollback|recover|fall.?back)"),
+ (r"(?:no|not|avoid|cannot).{0,100}(?:universal|mandatory|binding|deadline)|(?:deadline).{0,70}(?:depend|not|no)",),
+],
+}
+
+L = {
+"F01": [(r"ML[- ]?KEM|KEM", r"(?:symmetric|payload|data encrypt|shared secret)"), (r"(?:draft|errata|final|revision)", r"(?:date|standard|publication)"), (r"signatur", r"(?:key[- ]?establish|KEM|confidential|authenticat)")],
+"F02": [(r"minimum", r"enhanced", r"focus"), (r"2\.1", r"4\.1\.1", r"(?:contract|policy|legacy|still)"), (r"normative", r"(?:guidance|understanding|explanatory)")],
+"F03": [(r"capsule", r"spacecraft", r"(?:separat|different|not the same)"), (r"OSIRIS[-– ]?APEX", r"(?:rename|extended|same spacecraft)"), (r"(?:planned|future|projected|will|expected|due)", r"(?:2029|Apophis)")],
+"F04": [(r"1\.55", r"(?:uncertainty|±|range|interval)"), (r"1\.46", r"(?:NOAA|pre[- ]?industrial)"), (r"(?:dataset|method|coverage)", r"(?:difference|vary|compare|baseline)")],
+"A01": [(r"pull_request_target", r"(?:label|metadata)", r"(?:base|trusted|no.*execut)"), (r"artifact", r"(?:untrusted|validat|inspect|poison|verify)"), (r"(?:approval|read.only)", r"(?:not sufficient|not enough|does not|still|additional)")],
+"A02": [(r"1\.55", r"(?:±|uncertainty|interval|range)"), (r"annual|single.year", r"(?:multi.year|long.term|decad|trend|variab)"), (r"(?:not|no).{0,80}guarantee|(?:guaranteed|certain).{0,80}(?:not|no)|(?:future|reach).{0,80}(?:uncertain|conditional)",)],
+"A03": [(r"ShakeMap", r"(?:model|estimate)", r"(?:update|revision|prelim|change|evolv)"), (r"(?:ground|soil|geolog|distance)", r"(?:shak|intensit)"), (r"(?:building|structure|vulnerab)", r"(?:damage|risk|priority)")],
+"A04": [(r"pyproject\.toml", r"build-system"), (r"(?:incremental|gradual|retain|keep|remain valid|no requirement)", r"(?:migration|setup\.py|configuration|format)"), (r"(?:Hatchling|Flit|other backends?|alternative backends?|choice of backend)",)],
+"P01": [(r"harvest.now|store.now|long[- ]?retention|20.year", r"(?:decrypt.later|confidential|priorit|risk)"), (r"crypto.agil|rollback|reversib|fall.?back", r"(?:upgrade|migration|pilot|stage)"), (r"(?:validat|FIPS|CMVP)", r"(?:vendor|operat|support|library|provider)")],
+"P02": [(r"2\.4\.13|Focus Appearance", r"AAA"), (r"2\.5\.8|Target Size", r"(?:exception|spacing|equivalent|inline)"), (r"3\.3\.7|Redundant Entry", r"(?:exception|essential|previous|already available)")],
+"P03": [(r"artifact|cache", r"(?:untrusted|validat|poison|boundary)"), (r"(?:environment|approval|provenance|OIDC)", r"(?:release|publish|protect|trusted)"), (r"fork approval|approve.*fork", r"(?:not sufficient|additional|still|not replace)")],
+"P04": [(r"build dependence|build-system|requires", r"runtime|project.dependencies|install_requires"), (r"(?:sdist.{0,80}(?:content|includ|inspect|test)|(?:editable.{0,80}(?:behav|test|validat)))",), (r"setup\.py", r"(?:not deprecated|not obsolete|still valid|does not require removing|do not need to remove|not to remove|do not have to remove)")],
+"U01": [(r"siz|installer|contractor", r"(?:efficien|performance|comfort|load)"), (r"(?:fuel|electricity|tariff|price)", r"(?:cost|economic|payback|operat)"), (r"comfort|cooling|resilien|backup", r"(?:matter|value|benefit|risk|priority)")],
+"U02": [(r"ShakeMap", r"(?:estimate|model|update|revision|preliminary)"), (r"(?:road|communication|report)", r"(?:bias|delay|missing|outage|limited)"), (r"(?:hospital|critical facilit|power|water)", r"(?:population|priority|urgent|first)")],
+"U03": [(r"(?:signature size|larger signature|performance|verifier)", r"(?:support|constraint|test|latency|storage)"), (r"(?:long[- ]?lived|legacy|immutable|support horizon)", r"(?:device|fleet|migration|update)"), (r"crypto.agil|rollback|trust anchor|update.chain", r"(?:sign|verif|update|key)")],
+}
+
+C = {
+"F01": [(r"encrypt|sign|key|function",), (r"standard|implementation|guidance",), (r"system|retention|horizon|where|which",)],
+"F02": [(r"WCAG|level|version|AA|AAA",), (r"barrier|issue|user|accessib|focus",), (r"policy|contract|require|2\.1",)],
+"F03": [(r"audience|technical|public|depth|detail",), (r"date|timeline|event|precision|horizon",), (r"mission|curation|sample|Apophis",)],
+"F04": [(r"baseline|reference period",), (r"communicat|analys|purpose|audience|use",), (r"uncertainty|range|precision|confidence",)],
+"A01": [(r"fork|external PR",), (r"secret|publish|registry|token",), (r"approv|maintainer|review",), (r"scope|permission|privileg",)],
+"A02": [(r"Paris|metric|1\.5|threshold",), (r"annual|long.term|trend",), (r"decision|use|purpose|audience",)],
+"A03": [(r"quake|event|town|location|coordinate",), (r"ShakeMap|observed|report|data",), (r"infrastructure|building|population|vulnerab|exposure",)],
+"A04": [(r"setup\.py|custom|extension|logic",), (r"Python|frontend|version|pip",), (r"wheel|sdist|distribution",)],
+"P01": [(r"TLS|stack|vendor|provider",), (r"retention|confidential|20.year|data",), (r"sign|HSM|update",), (r"compliance|regulat|mandate|require",)],
+"P02": [(r"device|input|keyboard|touch",), (r"drag|alternative|slider",), (r"target|spacing|exception",), (r"address|already|previous|available",)],
+"P03": [(r"fork|external",), (r"label|triage",), (r"registry|release|publish|token",), (r"approv|review|trusted human",)],
+"P04": [(r"build depend|extension|compiler|setuptools",), (r"Python|platform|OS|version",), (r"wheel|sdist|distribution",), (r"CI|environment|runner",)],
+"U01": [(r"location|climate|temperature|region",), (r"heat loss|insulat|envelope|size",), (r"heater|fuel|duct|existing",), (r"tariff|price|quote|bid|cost",), (r"budget|comfort|priority",)],
+"U02": [(r"event|quake|town|coordinate|location",), (r"ShakeMap|observed|impact|intensit",), (r"population|hospital|infrastructure|building",), (r"road|access|respon|capacity",)],
+"U03": [(r"device|verifier|stack|fleet",), (r"size|performance|latency|storage",), (r"support|lifetime|horizon|regulat|compliance",), (r"rollback|recover|revert",)],
+}

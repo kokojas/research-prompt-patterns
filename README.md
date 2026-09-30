@@ -18,11 +18,11 @@ Open the relevant prompt, copy its English text, and append it to your task requ
 
 ## Compatibility
 
-Responses for the browser study with GPT-5.6 Sol, High, and Web Search are collected; grading is pending. The prompt text can be used in ChatGPT, Claude, and Gemini; other model families have not been evaluated.
+The browser study with GPT-5.6 Sol, High, and Web Search has an [exploratory local analysis](evals/LOCAL_ANALYSIS.md); confirmatory accuracy grading remains pending. The prompt text can be used in ChatGPT, Claude, and Gemini; other model families have not been evaluated.
 
 ## Quality and testing
 
-All 225 browser conversations are complete. Grading is pending. Quality is measured through correctness, useful expansion, clarification, sources, errors, and time. [Protocol](evals/BROWSER_WEB_PROTOCOL.md) · [Cases](evals/browser-web-tasks.json) · [Current status](evals/STATUS.md).
+All 225 browser conversations are complete. The local screen compares content markers, clarification behavior, sources, and observable cost; it does not yet establish a confirmed accuracy winner. [Analysis](evals/LOCAL_ANALYSIS.md) · [Protocol](evals/BROWSER_WEB_PROTOCOL.md) · [Cases](evals/browser-web-tasks.json) · [Current status](evals/STATUS.md).
 
 ## Repository structure
 

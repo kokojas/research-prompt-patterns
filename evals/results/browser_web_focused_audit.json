@@ -1,0 +1,1854 @@
+{
+  "scope_note": "Focused review of 45 sampled dialogues (20%). This is not a full claim-by-claim fact check; source-host presence is not source support. Grading was not fully blind, a deviation from the frozen protocol.",
+  "n_reviewed": 45,
+  "n_changed_dialogues": 9,
+  "n_changed_checkpoints": 11,
+  "rows": [
+    {
+      "item_id": "206-p03-base-r2",
+      "task_id": "P03",
+      "arm": "base",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "aa8084e559f3aede3fbf85c37cf5d0e593b1cb399b0b2a21dd29ef96f83bb791",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        0,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        0,
+        0
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "58-p04-base-r1",
+      "task_id": "P04",
+      "arm": "base",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "efaa9bccaf1f513a7af415b4676d8c2ed5174753f440168e28044d4329397477",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        0,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [
+        {
+          "group": "required",
+          "checkpoint": 6,
+          "old": 1,
+          "new": 0,
+          "reason": "No explicit clean-environment install/test of the built wheel."
+        },
+        {
+          "group": "latent",
+          "checkpoint": 2,
+          "old": 1,
+          "new": 0,
+          "reason": "Wheel test is present; sdist-content or editable-behavior check is not."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "93-p04-base-r2",
+      "task_id": "P04",
+      "arm": "base",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "12fba86cf62a921bae28ba657ab8d5c93e492639f9632d12899002998a9de467",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        0,
+        0,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [
+        {
+          "group": "latent",
+          "checkpoint": 2,
+          "old": 1,
+          "new": 0,
+          "reason": "Actual-wheel validation does not check sdist content or editable behavior."
+        },
+        {
+          "group": "latent",
+          "checkpoint": 3,
+          "old": 0,
+          "new": 1,
+          "reason": "Explicitly states setup.py remains a valid configuration file."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "192-u02-base-r1",
+      "task_id": "U02",
+      "arm": "base",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "f1238ec758ffb16abac5b8dff7e58b709cd6ec34caa153ef1bc8c229cbaf24ec",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        0,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        0,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "04-p04-base-r3",
+      "task_id": "P04",
+      "arm": "base",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "e969102f252e750937a86726192c271684e286f593f7e413667cb3c7ea6bad26",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        0,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [
+        {
+          "group": "latent",
+          "checkpoint": 2,
+          "old": 1,
+          "new": 0,
+          "reason": "Builds both artifacts but does not examine sdist contents or editable behavior."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "95-f03-base-r2",
+      "task_id": "F03",
+      "arm": "base",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "f2a8d738d027a432d1d5cbecc8d6a703660086eb37f80ed2b76c3e45f55c092e",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "54-a03-base-r2",
+      "task_id": "A03",
+      "arm": "base",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "f21868b279dd4dfe30c139520d923fb59645ec75f95e5f7d7933c469c3b85a43",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [
+        {
+          "group": "latent",
+          "checkpoint": 1,
+          "old": 1,
+          "new": 0,
+          "reason": "Calls ShakeMap an estimate but does not explain that it may be revised."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "20-f04-base-r1",
+      "task_id": "F04",
+      "arm": "base",
+      "sample_reason": "random draw",
+      "answer_sha256": "2a499aef552e3bd00d13c8608fca58f75c0214ad2c7b650729dc19b0fee1e77f",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "51-a04-base-r1",
+      "task_id": "A04",
+      "arm": "base",
+      "sample_reason": "random draw",
+      "answer_sha256": "88154b943cc45898cf52f56119e35aea11bd1c231aea64274a33ef178982d3d3",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "57-u03-verify-r1",
+      "task_id": "U03",
+      "arm": "verify",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "de3838b034fcdcdff33f0aaf394d85a2e4c16a1baaced04a430f5a54dbb082cf",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "117-u03-verify-r2",
+      "task_id": "U03",
+      "arm": "verify",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "08be9f1e879009d6a92ed5e7ba436978b2f539a0569a053eddca04a329e9c630",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "183-p02-verify-r2",
+      "task_id": "P02",
+      "arm": "verify",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "83bd80fd97b848afd6fe63d53c91c4b0a2dc972150817b5299763d77215821b8",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "154-f03-verify-r2",
+      "task_id": "F03",
+      "arm": "verify",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "14993bb77a20746fc850201f9e23f483183acb2fa08311a998301d12bfe8b250",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "145-a01-verify-r2",
+      "task_id": "A01",
+      "arm": "verify",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "073b47bde91f88129607ac7a93ec6e1aa6eb107eac2950b23bfd20b20c1084b5",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "221-p04-verify-r3",
+      "task_id": "P04",
+      "arm": "verify",
+      "sample_reason": "random draw",
+      "answer_sha256": "7f70240a26c13ecb9e307ec33ec2cf0306a76d56142397b49538ca292f6a3156",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "189-a02-verify-r3",
+      "task_id": "A02",
+      "arm": "verify",
+      "sample_reason": "random draw",
+      "answer_sha256": "ec25958f4318fec2a7e32dc48066fc224be5a413e39ea43c812685d268540fcf",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "102-p04-verify-r1",
+      "task_id": "P04",
+      "arm": "verify",
+      "sample_reason": "random draw",
+      "answer_sha256": "df2916a8a90ed3aa1bba31daf7a4303ff6a6f9d5a475389cdf4de6de4c861997",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        0,
+        0
+      ],
+      "reviewed_latent": [
+        0,
+        0,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [
+        {
+          "group": "latent",
+          "checkpoint": 3,
+          "old": 0,
+          "new": 1,
+          "reason": "Explicitly distinguishes deprecated setup.py CLI from retained configuration file."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "216-p03-verify-r1",
+      "task_id": "P03",
+      "arm": "verify",
+      "sample_reason": "random draw",
+      "answer_sha256": "43578fc5d13fc756c172026488f87b284d80a610316433fde3b78f9c07fa6e5c",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        0
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "98-p04-horizon-r1",
+      "task_id": "P04",
+      "arm": "horizon",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "767cbcda87347af4ed1d321bda8b640e2cd07deaf9a11890f2adeebdd5c669c7",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "18-p02-horizon-r3",
+      "task_id": "P02",
+      "arm": "horizon",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "e65524d924bc99f3803270c00f76fbbc57dfb26475d08f096b5c39d928b62e79",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "96-p03-horizon-r1",
+      "task_id": "P03",
+      "arm": "horizon",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "16df1c3c45746fbb8b8c72f47c52eeff36612f686d06be64e7b2ca10a5dda527",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "112-p04-horizon-r3",
+      "task_id": "P04",
+      "arm": "horizon",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "045fc09eedd091a57531ccc38b27fb8d47ab98ef03ec213c385dc5d9fb9beefc",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "151-f02-horizon-r3",
+      "task_id": "F02",
+      "arm": "horizon",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "55b6091326e5b10de3cc720910bbf25b584a09f64bc7135da9644a35c3d3f47d",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "81-a02-horizon-r2",
+      "task_id": "A02",
+      "arm": "horizon",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "f48082219e787c82901de25f07c602afad972cf58cc0b172764e1ee217d86889",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "194-u03-horizon-r2",
+      "task_id": "U03",
+      "arm": "horizon",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "5432b09000ca54b9d41b34fa091f3686db6cf7cb8bbe3c8c1b407b7c4c7de56d",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "67-f02-horizon-r2",
+      "task_id": "F02",
+      "arm": "horizon",
+      "sample_reason": "random draw",
+      "answer_sha256": "705e87e2deea7232c7509cb79be74a55ffe219ea8ca5d81170bd63494eb12183",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "225-a03-horizon-r2",
+      "task_id": "A03",
+      "arm": "horizon",
+      "sample_reason": "random draw",
+      "answer_sha256": "6f0b79ca7df56ca194e94032862d5198a2ec69fab5fecfa5de4908bc7c77387c",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": null,
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "116-p04-two-turn-base-r1",
+      "task_id": "P04",
+      "arm": "two_turn_base",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "c23a9044698bf2c57afd72cbd85ae01e49b22f7feae31f8863fb3e7cda3fbfc3",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "119-u02-two-turn-base-r3",
+      "task_id": "U02",
+      "arm": "two_turn_base",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "fdf9e5525b0403980fc157552491f56a706967685519c68498860d288051769e",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "changes": [
+        {
+          "group": "required",
+          "checkpoint": 1,
+          "old": 0,
+          "new": 1,
+          "reason": "Explicitly says neither town can be chosen before local shaking evidence."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "153-p02-two-turn-base-r1",
+      "task_id": "P02",
+      "arm": "two_turn_base",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "277e93233f733c8ec424d1a402cd7288b1e4a6cec6202197c2abf5cd4e11543f",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "100-a03-two-turn-base-r1",
+      "task_id": "A03",
+      "arm": "two_turn_base",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "bf131f8e0dadb88243c0f6ad40f2ab9e3d6b7b423268f17233abea12fb3c4c31",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        0
+      ],
+      "changes": [
+        {
+          "group": "required",
+          "checkpoint": 3,
+          "old": 0,
+          "new": 1,
+          "reason": "Opening explicitly rejects both identical intensity and equal inspection priority."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "101-a04-two-turn-base-r2",
+      "task_id": "A04",
+      "arm": "two_turn_base",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "e71fd2e1eab77bd2d154bc56164b4e1428eba447472a838018173ca388dbe83d",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        0
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        0
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "16-f03-two-turn-base-r2",
+      "task_id": "F03",
+      "arm": "two_turn_base",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "b1480c1b919030041d4bba0ecabf989045711803185158497b8ca89c5e1ae2e4",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        0,
+        0,
+        0
+      ],
+      "changes": [
+        {
+          "group": "latent",
+          "checkpoint": 3,
+          "old": 0,
+          "new": 1,
+          "reason": "Says Apophis study is scheduled for 2029, distinguishing plan from completed events."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "90-f04-two-turn-base-r1",
+      "task_id": "F04",
+      "arm": "two_turn_base",
+      "sample_reason": "random draw",
+      "answer_sha256": "8b5c300ebe92b08627f26996958158ad1757521e2cdc0f8d7cdc09f9d9949f86",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        0,
+        0,
+        0
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "99-f01-two-turn-base-r2",
+      "task_id": "F01",
+      "arm": "two_turn_base",
+      "sample_reason": "random draw",
+      "answer_sha256": "e77c9aac012624b0f73c36c14fc665c881ad23278bb7b35ce1743c15eff0a089",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        0,
+        0,
+        0
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "144-a02-two-turn-base-r3",
+      "task_id": "A02",
+      "arm": "two_turn_base",
+      "sample_reason": "random draw",
+      "answer_sha256": "0f742b2d613e73b64c37ef22b218ae705a5f541d2f59838c3baf2dbf227865d7",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        0
+      ],
+      "screened_clarify": [
+        0,
+        0,
+        0
+      ],
+      "changes": [
+        {
+          "group": "required",
+          "checkpoint": 3,
+          "old": 0,
+          "new": 1,
+          "reason": "Explicitly rejects definitive breach of the long-term Paris level."
+        }
+      ],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "190-p03-clarify-r1",
+      "task_id": "P03",
+      "arm": "clarify",
+      "sample_reason": "native citation marker without direct URL",
+      "answer_sha256": "e0ad45428e2f8613bd0a9c14029810da4ed30f2bc83df8831e6f90e734f06921",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "native citation markers without direct URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        0
+      ],
+      "screened_clarify": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "48-u03-clarify-r1",
+      "task_id": "U03",
+      "arm": "clarify",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "605956ea22f884ad35ca6ec60a9c0dca5d365ceecf01f4db4afce1c708888308",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "137-u03-clarify-r2",
+      "task_id": "U03",
+      "arm": "clarify",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "5c673aedf575f72009c9846568c44635820fa6d36168f27e99946cfd54704110",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "220-a04-clarify-r2",
+      "task_id": "A04",
+      "arm": "clarify",
+      "sample_reason": "large within-task deviation",
+      "answer_sha256": "b5feee3fcc5c00ba2c8480c16841b4d0c8f7be0a3d186df4ae2694a134089e28",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        0
+      ],
+      "screened_clarify": [
+        1,
+        0,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "146-f03-clarify-r1",
+      "task_id": "F03",
+      "arm": "clarify",
+      "sample_reason": "category-stratified random draw",
+      "answer_sha256": "505b97d79bbb27b141296d662740c5d4235f2cf1fae1014e1f81acb2b6e12879",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "197-f01-clarify-r3",
+      "task_id": "F01",
+      "arm": "clarify",
+      "sample_reason": "random draw",
+      "answer_sha256": "4033ab788a76bfd3c86ecd1019034e25a2222db74636bf94da9ae141f1e8f7d1",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "207-p02-clarify-r3",
+      "task_id": "P02",
+      "arm": "clarify",
+      "sample_reason": "random draw",
+      "answer_sha256": "33c791f4725f8bde9c67e86d57cd4d91e155eedd640b4ef01b2c91e75eb46df0",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "08-f02-clarify-r2",
+      "task_id": "F02",
+      "arm": "clarify",
+      "sample_reason": "random draw",
+      "answer_sha256": "f34eb0403899dd71ccbefb707965ebc297120fed9e6256f8f54f04435b9a23bc",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        0,
+        1,
+        0
+      ],
+      "reviewed_latent": [
+        0,
+        1,
+        0
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    },
+    {
+      "item_id": "36-f01-clarify-r2",
+      "task_id": "F01",
+      "arm": "clarify",
+      "sample_reason": "random draw",
+      "answer_sha256": "d6f35191773075a727196a1b9613758dd9efd11c53dc00bf68e7197d4f1b32c0",
+      "scope": "answer opening, all criterion evidence extracts, source-host inventory, and targeted full-text review of disputed criteria",
+      "source_inventory": "at least one task-relevant official host URL",
+      "screened_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reviewed_required": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "screened_latent": [
+        1,
+        1,
+        1
+      ],
+      "reviewed_latent": [
+        1,
+        1,
+        1
+      ],
+      "screened_clarify": [
+        1,
+        1,
+        1
+      ],
+      "changes": [],
+      "source_support_certified": false,
+      "material_error_rate_certified": false
+    }
+  ]
+}
